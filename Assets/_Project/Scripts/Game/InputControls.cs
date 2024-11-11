@@ -48,7 +48,7 @@ public class InputControls : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             // If this object has a collider and is an interactable object, then move this object with the input
-            if (hit.collider != null && (hit.collider.gameObject.layer == LayerMask.NameToLayer("Interactable")))
+            if (hit.collider != null && (hit.collider.gameObject.layer == LayerMask.NameToLayer("Interactable")) || hit.collider.gameObject.GetComponent<IHold>() != null)
             {
                 StartCoroutine(DragUpdate(hit.collider.gameObject));
             }
@@ -61,6 +61,9 @@ public class InputControls : MonoBehaviour
         // Calcute the distance between the object and player
         float objectDistance = Vector3.Distance(holdingObject.transform.position, mainCamera.transform.position);
         holdingObject.TryGetComponent<Rigidbody>(out Rigidbody rb);
+        holdingObject.TryGetComponent<IHold>(out IHold iHoldComponent);
+        // If the component is not null, then execute the OnStartHold function
+        iHoldComponent?.OnStartHold();
 
         // Check if the input is given
         while (arControls.Controls.MoveObjects.ReadValue<float>() != 0)
@@ -83,5 +86,8 @@ public class InputControls : MonoBehaviour
                 yield return null;
             }
         }
+
+        // If the component is not null, then execute the OnStopHold function
+        iHoldComponent?.OnStopHold();
     }
 }
