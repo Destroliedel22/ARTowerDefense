@@ -8919,21 +8919,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2583299979888075555, guid: b4a79bd2a2c960f4f8f45e4014978a83, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2583299979888075555, guid: b4a79bd2a2c960f4f8f45e4014978a83, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2766520990056341028, guid: b4a79bd2a2c960f4f8f45e4014978a83, type: 3}
       propertyPath: m_Name
       value: PT_Plague_Doctor
-      objectReference: {fileID: 0}
-    - target: {fileID: 3024394837091304836, guid: b4a79bd2a2c960f4f8f45e4014978a83, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3255953556716913822, guid: b4a79bd2a2c960f4f8f45e4014978a83, type: 3}
       propertyPath: m_LocalPosition.x
