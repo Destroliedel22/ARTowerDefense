@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Defense
+  - Table
   layers:
   - Default
   - TransparentFX

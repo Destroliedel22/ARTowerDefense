@@ -1,47 +1,38 @@
-using System;
-using System.Collections.Generic;
-using System.Data;
+using Meta.XR.MRUtilityKit;
+using System.Collections;
+using Unity.XR.CoreUtils;
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
+
 
 public class DetectTable : MonoBehaviour
 {
-    List<ARPlane> planes = new List<ARPlane>();
-    ARPlaneManager planeManager;
-    ARPlane highestPlane;
+    GameObject tablePrefab;
+    GameObject room;
+    GameObject table;
 
-    private void Awake()
+    BoxCollider tableCollider;
+
+    public void SetupTable()
     {
-        planeManager = GetComponent<ARPlaneManager>();
-        foreach (var plane in planeManager.trackables)
-        {
-            planes.Add(plane);
-        }
+        room = FindAnyObjectByType<MRUKRoom>().gameObject;
+        table = room.transform.Find("TABLE").gameObject;
     }
 
-    private void Update()
+    public void FindTable()
     {
-        SubscribeToPlanesChanged();
+        tableCollider = table.transform.Find("TABLE_EffectMesh").GetComponent<BoxCollider>();
+        tablePrefab = gameObject.transform.GetChild(0).gameObject;
     }
 
-    public void OnTrackablesChanged(ARTrackablesChangedEventArgs<ARPlane> changes)
+    private void Start()
     {
-        foreach (var plane in changes.added)
-        {
-            if (plane.transform.position.y > highestPlane.transform.position.y || highestPlane == null)
-            {
-                highestPlane = plane;
-            }
-            else
-            {
-                plane.gameObject.GetComponent<MeshRenderer>().enabled = false;
-            }
-        }
+        StartCoroutine(WaitToFindTable());
     }
 
-    void SubscribeToPlanesChanged()
+    IEnumerator WaitToFindTable()
     {
-        planeManager.trackablesChanged.AddListener(OnTrackablesChanged);
+        yield return new WaitForSeconds(10f);
+        FindTable();
+        tablePrefab.transform.localScale = new Vector3(tableCollider.size.x, tablePrefab.transform.localScale.y, tableCollider.size.z);
     }
 }
