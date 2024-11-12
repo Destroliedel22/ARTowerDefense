@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ReachedBase : MonoBehaviour
+public class ReachedTurret : MonoBehaviour
 {
     private Enemy enemy;
 
@@ -9,7 +9,7 @@ public class ReachedBase : MonoBehaviour
     {
         if (enemy = collider.GetComponent<Enemy>())
         {
-            enemy.reachedBase = true;
+            enemy.reachedTurret = true;
         }
     }
 
@@ -17,7 +17,7 @@ public class ReachedBase : MonoBehaviour
     {
         if (enemy = collider.GetComponent<Enemy>())
         {
-            enemy.reachedBase = false;
+            enemy.reachedTurret = false;
         }
     }
 }
