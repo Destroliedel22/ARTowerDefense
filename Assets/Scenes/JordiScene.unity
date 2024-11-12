@@ -13580,12 +13580,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnOnStart: 1
-  SpawnObject: {fileID: 7398037678036158521, guid: 94e39325322b93f42bb8e7591fe1fc9a, type: 3}
+  SpawnObject: {fileID: 5738110718601491790, guid: adfa89d2bc2d6924abf8335c8841e803, type: 3}
   SpawnAmount: 1
   MaxIterations: 1000
   SpawnLocations: 3
   Labels: 8
-  CheckOverlaps: 0
+  CheckOverlaps: 1
   OverrideBounds: 0
   LayerMask:
     serializedVersion: 2
@@ -24275,7 +24275,7 @@ MonoBehaviour:
   useRecommendedMSAALevel: 1
   _monoscopic: 0
   _sharpenType: 0
-  enableDynamicResolution: 0
+  enableDynamicResolution: 1
   minDynamicResolutionScale: 0.7
   maxDynamicResolutionScale: 1.3
   minRenderScale: 0.7

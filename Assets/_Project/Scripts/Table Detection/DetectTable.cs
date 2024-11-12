@@ -33,6 +33,6 @@ public class DetectTable : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         FindTable();
-        tablePrefab.transform.localScale = new Vector3(tableCollider.size.x, tablePrefab.transform.localScale.y, tableCollider.size.z);
+        tablePrefab.transform.localScale = new Vector3(tableCollider.size.x/10, tablePrefab.transform.localScale.y/10, tableCollider.size.z/10);
     }
 }
