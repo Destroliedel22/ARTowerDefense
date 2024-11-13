@@ -1,0 +1,73 @@
+{
+    "name": "ARControls",
+    "maps": [
+        {
+            "name": "Controls",
+            "id": "43da9a29-8309-4a10-bec1-41d3f98601df",
+            "actions": [
+                {
+                    "name": "MoveObjects",
+                    "type": "Button",
+                    "id": "9e829e1c-7399-453f-a8b3-0ee03c94e922",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fab05c14-d439-433d-930e-a320164a0985",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Mouse&keyboard",
+                    "action": "MoveObjects",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d4ad506c-1d05-4cdf-a741-9cfc252f4939",
+                    "path": "*/{PinchTouched}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Quest3",
+                    "action": "MoveObjects",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Quest3",
+            "bindingGroup": "Quest3",
+            "devices": [
+                {
+                    "devicePath": "<HandInteractionPoses>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Mouse&keyboard",
+            "bindingGroup": "Mouse&keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

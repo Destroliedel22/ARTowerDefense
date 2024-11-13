@@ -15,10 +15,10 @@ TagManager:
   - UI
   - Spawner Contact
   - Placeable Surface
-  - 
-  - 
-  - 
-  - 
+  - Interactable
+  - Base
+  - Projectile
+  - Enemies
   - 
   - 
   - 
