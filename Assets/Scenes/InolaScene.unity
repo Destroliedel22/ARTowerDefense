@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 10039835}
   - component: {fileID: 10039836}
+  - component: {fileID: 10039837}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -165,6 +166,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseDragSpeed: 15
   dragSpeed: 0.1
+--- !u!114 &10039837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10039834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4158666024619464d8400914c3794dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveCompleted: 0
+  enemiesWon: 0
 --- !u!1 &147410573
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1350798989309196834, guid: b71f0d70a10b96045af5154338e9b303, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.21
+      value: -14.01
       objectReference: {fileID: 0}
     - target: {fileID: 1350798989309196834, guid: b71f0d70a10b96045af5154338e9b303, type: 3}
       propertyPath: m_LocalPosition.y
@@ -754,7 +769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1350798989309196834, guid: b71f0d70a10b96045af5154338e9b303, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.13
+      value: -8.52
       objectReference: {fileID: 0}
     - target: {fileID: 1350798989309196834, guid: b71f0d70a10b96045af5154338e9b303, type: 3}
       propertyPath: m_LocalRotation.w
@@ -892,6 +907,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 536689046253971995, guid: f310d3d53b1cfaf4fa889adb3e43e6a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331439687172333214, guid: f310d3d53b1cfaf4fa889adb3e43e6a9, type: 3}
+      propertyPath: reachedTurret
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5424320676245080177, guid: f310d3d53b1cfaf4fa889adb3e43e6a9, type: 3}
