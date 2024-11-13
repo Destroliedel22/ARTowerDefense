@@ -82,6 +82,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 13.68
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
@@ -92,6 +93,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DotViewRadius: 32.66
     - _DstBlend: 10
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
@@ -105,7 +107,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SampleGI: 0
-    - _ShortestUVMapping: 0
+    - _ShortestUVMapping: 4.44
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
