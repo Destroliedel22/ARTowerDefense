@@ -8,6 +8,7 @@ public class LockPlayfield : MonoBehaviour
     [SerializeField] GameObject grabObject;
 
     private Canvas lockCanvas;
+    private bool isLocked;
 
     public GameObject LockedButton;
     public GameObject UnlockedButton;
@@ -17,19 +18,22 @@ public class LockPlayfield : MonoBehaviour
         lockCanvas = GetComponentInChildren<Canvas>();
     }
 
+    //locks playfield 
     public void Lock()
     {
         grabObject.SetActive(false);
         LockedButton.SetActive(false);
         UnlockedButton.SetActive(true);
-        Debug.Log("locked");
+        gameObject.transform.rotation = Quaternion.Euler(0f, gameObject.transform.rotation.y, 0f);
+        isLocked = true;
     }
 
+    //unlocks playfield
     public void Unlock()
     {
         grabObject.SetActive(true);
         LockedButton.SetActive(true);
         UnlockedButton.SetActive(false);
-        Debug.Log("unlocked");
+        isLocked = false;
     }
 }

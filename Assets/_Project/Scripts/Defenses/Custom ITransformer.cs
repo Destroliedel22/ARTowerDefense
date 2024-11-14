@@ -1,6 +1,6 @@
+using UnityEngine;
 using System.Buffers;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Oculus.Interaction
 {
@@ -8,7 +8,7 @@ namespace Oculus.Interaction
     /// A Transformer that can translate, rotate and scale a transform using any
     /// number of GrabPoints while also constraining the transformation if desired.
     /// </summary>
-    public class ITransformerPlayfield : MonoBehaviour, ITransformer
+    public class CustomITransformer : MonoBehaviour, ITransformer
     {
         [SerializeField]
         [Tooltip("Constrains the position of the object along different axes. Units are meters.")]
@@ -63,7 +63,7 @@ namespace Oculus.Interaction
 
         private GrabPointDelta[] _deltas;
 
-        public bool isGrabbed;
+        public bool IsGrabbed;
 
         private struct GrabPointDelta
         {
@@ -135,7 +135,7 @@ namespace Oculus.Interaction
             _lastRotation = Quaternion.identity;
             _lastScale = targetTransform.localScale;
 
-            isGrabbed = true;
+            IsGrabbed = true;
         }
 
         public void UpdateTransform()
@@ -161,7 +161,8 @@ namespace Oculus.Interaction
             //return the uneeded space
             ArrayPool<GrabPointDelta>.Shared.Return(_deltas);
             _deltas = null;
-            isGrabbed = false;
+
+            IsGrabbed = false;
         }
 
         private Vector3 UpdateTransformerPointData(List<Pose> poses)
