@@ -42,6 +42,8 @@ public abstract class Enemy : MonoBehaviour
     // Health
     private EnemyHealth health;
 
+    private EnemyWaveSpawner enemySpawner;
+
     protected virtual void Start()
     {
         // Find base
@@ -51,6 +53,8 @@ public abstract class Enemy : MonoBehaviour
         health = GetComponent<EnemyHealth>();
         baseHealth = FindFirstObjectByType<BaseHealth>();
         animator = GetComponent<Animator>();
+
+        enemySpawner = FindFirstObjectByType<EnemyWaveSpawner>();
     }
 
     protected virtual void FixedUpdate()
@@ -222,6 +226,7 @@ public abstract class Enemy : MonoBehaviour
     // If enemy does not have any health, it will die
     private void DeathState()
     {
+        enemySpawner.RemoveEnemies(enemySpawner.enemy);
         health.currentHealth = 0;
         // Play dying animation
         Destroy(gameObject);

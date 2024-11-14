@@ -1,6 +1,5 @@
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,27 +31,27 @@ public class GameManager : MonoBehaviour
     private bool gameStart = false;
 
     // Waves
-    private float waitingTime;
     private int maxWaves;
-    private int currentWave;
-    private int[] waves;
-    public bool waveCompleted = false;
+    [SerializeField] private List<int> waves = new List<int>();
+
+    public bool canSpawnWave = false;
 
     // Rounds
     private int currentRound = 0;
     private bool roundCompleted = false;
+
+    public bool enemiesKilled = false;
     public bool enemiesWon = false;
 
     private void Awake()
     {
-        // Set the instance, so I can change it if I need to
+        // Set the instance, so we can change it
         instance = this;
     }
 
     private void Start()
     {
-        // Set the current wave equal to the waves in the array
-        currentWave = waves[0];
+        gameStart = true;
     }
 
     private void Update()
@@ -63,45 +62,82 @@ public class GameManager : MonoBehaviour
         {
             GameOverScreen();
         }
+
+        if (enemiesKilled)
+        {
+            // Removes one wave after all the enemies have been killed
+            UpdateWave(1);
+        }
+
+        if (roundCompleted)
+        {
+            StartNewRound();
+        }
     }
 
     private void StartGame()
     {
-        // Decrease the waiting time 
-        waitingTime = 10;
-
         if (gameStart)
         {
-            UpdateWave(1);
-            StartCoroutine(WaitForSpawn(waitingTime));
+            gameStart = false;
+            StartNewRound();
         }
     }
 
-    // Wait a while before spawning a new wave
-    private IEnumerator WaitForSpawn(float waitTime)
+    private void StartNewRound()
     {
-        yield return new WaitForSeconds(waitTime);
-        SpawnNewWave();
+        // Add 1 round every time a round has been completed
+        UpdateRound(1);
+        // Then check in which round we are to set the amount of waves
+        SetWaveAmount();
+        // Activate wave spawner
+        canSpawnWave = true;
+    }
+
+    private void UpdateWave(int finishedWave) // 1
+    {
+        // If all the enemies have been killed and there are still waves to come, spawn new enemies
+        if (enemiesKilled)
+        {
+            enemiesKilled = false;
+            waves.Remove(finishedWave);
+            canSpawnWave = true;
+        }
+
+        // If all the waves have come and all the enemies are killed, then start a new wave
+        if (waves.Count <= 0 && enemiesKilled)
+        {
+            roundCompleted = true;
+        }
     }
 
     private void SetWaveAmount()
     {
         // Increase the amount of waves based on the rounds
+        if (currentRound == 1 || currentRound == 2)
+        {
+            maxWaves = 3;
+        }
+        if (currentRound == 3 || currentRound == 4)
+        {
+            maxWaves = 5;
+        }
+
+        // Add the amount of waves to the list
+        waves.Add(maxWaves);
     }
 
-    private void SpawnNewWave()
-    {
-        
-    }
 
-    // Add a wave every time
-    private void UpdateWave(int amount)
+    // Add a round every time it is completed
+    private void UpdateRound(int roundsWon)
     {
-        waves[currentWave] += amount;
+        currentRound += roundsWon;
     }
 
     private void GameOverScreen()
     {
-
+        // Game over logic
+        // Freeze or remove the plane
+        // A button will appear from the ground up which allows you to retry or quit
     }
 }
