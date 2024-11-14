@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class LockPlayfield : MonoBehaviour
 {
-    private Canvas lockCanvas;
-    private bool isLocked;
+    [SerializeField] GameObject grabObject;
 
-    public Sprite LockedImg;
-    public Sprite UnlockedImg;
+    private Canvas lockCanvas;
+
+    public GameObject LockedButton;
+    public GameObject UnlockedButton;
 
     private void Awake()
     {
@@ -18,20 +19,17 @@ public class LockPlayfield : MonoBehaviour
 
     public void Lock()
     {
-        switch (isLocked)
-        {
-            case true:
-                gameObject.transform.GetComponentInChildren<HandGrabInteractable>().enabled = true;
-                lockCanvas.GetComponentInChildren<Image>().sprite = UnlockedImg;
-                isLocked = false;
-                Debug.Log("unlocked");
-                break;
-            case false:
-                gameObject.transform.GetComponentInChildren<HandGrabInteractable>().enabled = false;
-                lockCanvas.GetComponentInChildren<Image>().sprite = LockedImg;
-                isLocked = true;
-                Debug.Log("locked");
-                break;
-        }
+        grabObject.SetActive(false);
+        LockedButton.SetActive(false);
+        UnlockedButton.SetActive(true);
+        Debug.Log("locked");
+    }
+
+    public void Unlock()
+    {
+        grabObject.SetActive(true);
+        LockedButton.SetActive(true);
+        UnlockedButton.SetActive(false);
+        Debug.Log("unlocked");
     }
 }

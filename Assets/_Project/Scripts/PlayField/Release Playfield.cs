@@ -3,9 +3,16 @@ using UnityEngine;
 
 public class ReleasePlayfield : MonoBehaviour
 {
+    private ITransformerPlayfield iTransformerScript;
+
+    private void Awake()
+    {
+        iTransformerScript = gameObject.GetComponentInChildren<ITransformerPlayfield>();
+    }
+
     private void Update()
     {
-        if(gameObject.GetComponentInChildren<ITransformerPlayfield>().isGrabbed == false)
+        if(iTransformerScript.isGrabbed == false && iTransformerScript != null)
         {
             gameObject.transform.rotation = Quaternion.Euler(0f, gameObject.transform.rotation.y, 0f);
         }
