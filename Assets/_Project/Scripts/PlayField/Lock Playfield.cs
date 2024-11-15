@@ -24,7 +24,7 @@ public class LockPlayfield : MonoBehaviour
         grabObject.SetActive(false);
         LockedButton.SetActive(false);
         UnlockedButton.SetActive(true);
-        gameObject.transform.rotation = Quaternion.Euler(0f, gameObject.transform.rotation.y, 0f);
+        gameObject.transform.rotation = Quaternion.Euler(0f, gameObject.transform.eulerAngles.y, 0f);
         isLocked = true;
     }
 

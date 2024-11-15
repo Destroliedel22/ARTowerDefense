@@ -20,7 +20,7 @@ public class DefenseDetection : MonoBehaviour
         if (collision.gameObject.CompareTag("Defense"))
         {
             grabObject = collision.gameObject.GetNamedChild("[BuildingBlock] HandGrab");
-            if (collision.gameObject.GetComponentInChildren<CustomITransformer>().IsGrabbed == false && lockPlayfield.isLocked)
+            if (collision.gameObject.GetComponentInChildren<CustomITransformer>().IsGrabbed == false) //&& lockPlayfield.isLocked)
             {
                 collision.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 collision.gameObject.GetComponent<Rigidbody>().isKinematic = true;
