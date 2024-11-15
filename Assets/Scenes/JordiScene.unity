@@ -11468,6 +11468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabObject: {fileID: 1632885408}
+  isLocked: 0
   LockedButton: {fileID: 29907933}
   UnlockedButton: {fileID: 1077079602}
 --- !u!114 &571321781
@@ -33553,37 +33554,6 @@ Transform:
   - {fileID: 201770023}
   m_Father: {fileID: 307095240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1954907572
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1954907573}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1954907573
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954907572}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09691462, y: 1.1471504, z: -0.26616484}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955239919
 GameObject:
   m_ObjectHideFlags: 0
@@ -38028,6 +37998,5 @@ SceneRoots:
   - {fileID: 682842138}
   - {fileID: 1336437594}
   - {fileID: 1056778521}
-  - {fileID: 1954907573}
   - {fileID: 571321778}
   - {fileID: 440736556}

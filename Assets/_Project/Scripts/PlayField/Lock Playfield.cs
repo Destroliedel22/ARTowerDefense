@@ -8,8 +8,8 @@ public class LockPlayfield : MonoBehaviour
     [SerializeField] GameObject grabObject;
 
     private Canvas lockCanvas;
-    private bool isLocked;
 
+    public bool isLocked;
     public GameObject LockedButton;
     public GameObject UnlockedButton;
 

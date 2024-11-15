@@ -5,22 +5,29 @@ using UnityEngine;
 
 public class DefenseDetection : MonoBehaviour
 {
-    GameObject grabObject;
-    bool isPlaced;
+    private GameObject grabObject;
+    private LockPlayfield lockPlayfield;
+
+    public bool IsPlaced;
+
+    private void Awake()
+    {
+        lockPlayfield = GetComponent<LockPlayfield>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Defense"))
         {
             grabObject = collision.gameObject.GetNamedChild("[BuildingBlock] HandGrab");
-            if (collision.gameObject.GetComponentInChildren<CustomITransformer>().IsGrabbed == false)
+            if (collision.gameObject.GetComponentInChildren<CustomITransformer>().IsGrabbed == false && lockPlayfield.isLocked)
             {
                 collision.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 collision.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 collision.gameObject.transform.SetParent(transform);
                 collision.transform.rotation = Quaternion.Euler(0, 0, 0);
                 collision.gameObject.GetNamedChild("[BuildingBlock] HandGrab").SetActive(false);
-                isPlaced = true;
+                IsPlaced = true;
             }
         }
     }
@@ -33,7 +40,7 @@ public class DefenseDetection : MonoBehaviour
     //        collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     //        collision.gameObject.transform.SetParent(transform);
     //        grabObject.SetActive(true);
-    //        isPlaced = false;
+    //        IsPlaced = false;
     //    }
     //}
 }
