@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     // States for all the enemies
     protected enum enemyStates
@@ -129,7 +129,7 @@ public abstract class Enemy : MonoBehaviour
         }
         else
         {
-            states = enemyStates.moveToBase;
+            //states = enemyStates.moveToBase;
         }
     }
 
