@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BaseHealth : MonoBehaviour
@@ -22,10 +23,16 @@ public class BaseHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            // Play dying animation
-            Destroy(gameObject);
-            // Go to lose screen
+            StartCoroutine(WaitForDyingAnimation());
         }
+    }
+
+    private IEnumerator WaitForDyingAnimation()
+    {
+        // Play dying animation
+        yield return new WaitForSeconds(5);
+        GameManager.Instance.enemiesWon = true;
+        Destroy(gameObject);
     }
 
     // Take damage
