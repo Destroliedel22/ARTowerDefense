@@ -12,6 +12,9 @@ public abstract class Turrets : MonoBehaviour, IHold
     // Health
     private TurretHealth health;
 
+    // Placed on playfield true or false
+    public bool IsPlaced = false;
+
     // States for all the turrets
     protected enum turretStates
     {

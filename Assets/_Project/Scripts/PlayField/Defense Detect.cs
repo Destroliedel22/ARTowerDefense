@@ -1,6 +1,4 @@
 using Oculus.Interaction;
-using Oculus.Interaction.HandGrab;
-using System.Runtime.CompilerServices;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
@@ -9,13 +7,12 @@ public class DefenseDetection : MonoBehaviour
     private GameObject grabObject;
     private LockPlayfield lockPlayfield;
 
-    public bool IsPlaced;
-
     private void Awake()
     {
         lockPlayfield = GetComponent<LockPlayfield>();
     }
 
+    //locks the turret on the playfield
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Defense"))
@@ -29,9 +26,9 @@ public class DefenseDetection : MonoBehaviour
                 defense.transform.SetParent(transform);
                 defense.transform.rotation = Quaternion.Euler(0, 0, 0);
                 defense.GetNamedChild("[BuildingBlock] HandGrab").SetActive(false);
-                IsPlaced = true;
-                if(defense.transform.position.y < 0.943f)
-                   defense.transform.position = new Vector3(defense.transform.position.x, 0.943f, defense.transform.position.z);
+                if(defense.transform.position.y != 0.060f)
+                   defense.transform.position = new Vector3(defense.transform.position.x, 0.060f, defense.transform.position.z);
+                defense.GetComponent<TurretOne>().IsPlaced = true;
             }
         }
     }
@@ -44,7 +41,6 @@ public class DefenseDetection : MonoBehaviour
     //        collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     //        collision.gameObject.transform.SetParent(transform);
     //        grabObject.SetActive(true);
-    //        IsPlaced = false;
     //    }
     //}
 }

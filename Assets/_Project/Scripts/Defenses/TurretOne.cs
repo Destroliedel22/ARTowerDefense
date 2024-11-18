@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class TurretOne : Turrets
 {
@@ -7,6 +8,7 @@ public class TurretOne : Turrets
     [SerializeField] private GameObject shootingEffect;
 
     private Coroutine coroutine;
+    private AimConstraint aimConstraint;
 
     private void FixedUpdate()
     {
@@ -30,11 +32,12 @@ public class TurretOne : Turrets
     private void LookAtEnemy()
     {
         // Check if another turret has not destroyed this enemy yet
-        if (target != null)
-        {
-            // Rotate towards the head towards the enemy
-            head.transform.forward = target.transform.position - transform.position;
-        }
+        //if (target != null)
+        //{
+        //    // Rotate towards the head towards the enemy
+        //    head.transform.forward = target.transform.position - transform.position;
+        //}
+        AimConstraint
     }
 
     private void Shoot()
@@ -54,8 +57,8 @@ public class TurretOne : Turrets
 
     protected override void AttackingState()
     {
-        // Only call coroutine when it is null (so it won't be called non stop)
-        if (coroutine == null)
+        // Only call coroutine when it is null (so it won't be called non stop) and only when turret is placed
+        if (coroutine == null || IsPlaced)
         {
             coroutine = StartCoroutine(WaitForShoot());
         }
