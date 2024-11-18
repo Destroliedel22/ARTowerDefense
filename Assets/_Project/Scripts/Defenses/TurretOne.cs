@@ -56,7 +56,7 @@ public class TurretOne : Turrets
     protected override void AttackingState()
     {
         // Only call coroutine when it is null (so it won't be called non stop) and only when turret is placed
-        if (coroutine == null || IsPlaced)
+        if (coroutine == null && IsPlaced)
         {
             coroutine = StartCoroutine(WaitForShoot());
         }

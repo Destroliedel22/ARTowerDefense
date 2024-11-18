@@ -163,15 +163,18 @@ public class Enemy : MonoBehaviour
 
     private void MoveToTurretState()
     {
-        // Enemy looks at the turret
-        transform.LookAt(foundTurret.transform.position);
+        if(foundTurret.GetComponentInParent<TurretOne>().IsPlaced)
+        {
+            // Enemy looks at the turret
+            transform.LookAt(foundTurret.transform.position);
 
-        // Enemy moves towards the turret
-        Vector3 targetPos = Vector3.MoveTowards(transform.position, foundTurret.transform.position, speed);
-        transform.position = targetPos;
+            // Enemy moves towards the turret
+            Vector3 targetPos = Vector3.MoveTowards(transform.position, foundTurret.transform.position, speed);
+            transform.position = targetPos;
 
-        // Right place?????????????????????????????
-        ReachedTurret();
+            // Right place?????????????????????????????
+            ReachedTurret();
+        }
     }
 
     private void ReachedTurret()

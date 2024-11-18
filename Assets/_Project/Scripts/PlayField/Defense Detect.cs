@@ -26,8 +26,6 @@ public class DefenseDetection : MonoBehaviour
                 defense.transform.SetParent(transform);
                 defense.transform.rotation = Quaternion.Euler(0, 0, 0);
                 defense.GetNamedChild("[BuildingBlock] HandGrab").SetActive(false);
-                if(defense.transform.position.y != 0.060f)
-                   defense.transform.position = new Vector3(defense.transform.position.x, 0.060f, defense.transform.position.z);
                 defense.GetComponent<TurretOne>().IsPlaced = true;
             }
         }

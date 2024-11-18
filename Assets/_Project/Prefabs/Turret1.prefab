@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8244637322074857667}
   - component: {fileID: 8365614820765882970}
   - component: {fileID: 1925204275274492356}
-  - component: {fileID: 6293356614710149989}
   m_Layer: 8
   m_Name: Turret1
   m_TagString: Defense
@@ -32,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.32, y: 1.05, z: -8.83}
-  m_LocalScale: {x: 0.049999997, y: 0.09156002, z: 0.050000004}
+  m_LocalScale: {x: 0.10869564, y: 1.8312004, z: 0.042735048}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1821473626113187933}
@@ -111,6 +110,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 2048
+  IsPlaced: 0
   states: 0
   head: {fileID: 7560092638322960005}
   shootingEffect: {fileID: 2519706387813955858}
@@ -127,29 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
---- !u!895512359 &6293356614710149989
-AimConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 719331679231794475}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Weight: 1
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationOffset: {x: 0, y: 0, z: 0}
-  m_AimVector: {x: 0, y: 0, z: 1}
-  m_UpVector: {x: 0, y: 1, z: 0}
-  m_WorldUpVector: {x: 0, y: 1, z: 0}
-  m_WorldUpObject: {fileID: 0}
-  m_UpType: 0
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_Active: 0
-  m_IsLocked: 0
-  m_Sources: []
 --- !u!1 &1050412310960431544
 GameObject:
   m_ObjectHideFlags: 0
@@ -5227,7 +5204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 18f575e6-324b-4bb3-b3ad-1b542d136a8e
+  instanceId: b37accb9-c1ea-449d-b9de-444950f992a9
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -5435,8 +5412,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.07672057, y: 0.057041172, z: 6.0722237}
-  m_Center: {x: 0.0018191074, y: 0.00074440485, z: 2.331637}
+  m_Size: {x: 0.42170122, y: 0.45667854, z: 6.072223}
+  m_Center: {x: 0.0034345838, y: -0.027511738, z: 2.3316371}
 --- !u!114 &5457119796392366154
 MonoBehaviour:
   m_ObjectHideFlags: 0
