@@ -1,5 +1,6 @@
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
+using System.Runtime.CompilerServices;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
@@ -19,15 +20,18 @@ public class DefenseDetection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Defense"))
         {
+            GameObject defense = collision.gameObject;
             grabObject = collision.gameObject.GetNamedChild("[BuildingBlock] HandGrab");
-            if (collision.gameObject.GetComponentInChildren<CustomITransformer>().IsGrabbed == false) //&& lockPlayfield.isLocked)
+            if (collision.gameObject.GetComponentInChildren<CustomITransformer>().IsGrabbed == false && lockPlayfield.isLocked)
             {
-                collision.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                collision.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                collision.gameObject.transform.SetParent(transform);
-                collision.transform.rotation = Quaternion.Euler(0, 0, 0);
-                collision.gameObject.GetNamedChild("[BuildingBlock] HandGrab").SetActive(false);
+                defense.GetComponent<Rigidbody>().useGravity = false;
+                defense.GetComponent<Rigidbody>().isKinematic = true;
+                defense.transform.SetParent(transform);
+                defense.transform.rotation = Quaternion.Euler(0, 0, 0);
+                defense.GetNamedChild("[BuildingBlock] HandGrab").SetActive(false);
                 IsPlaced = true;
+                if(defense.transform.position.y < 0.943f)
+                   defense.transform.position = new Vector3(defense.transform.position.x, 0.943f, defense.transform.position.z);
             }
         }
     }
