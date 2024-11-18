@@ -8,7 +8,6 @@ public class TurretOne : Turrets
     [SerializeField] private GameObject shootingEffect;
 
     private Coroutine coroutine;
-    private AimConstraint aimConstraint;
 
     private void FixedUpdate()
     {
@@ -31,13 +30,12 @@ public class TurretOne : Turrets
 
     private void LookAtEnemy()
     {
-        // Check if another turret has not destroyed this enemy yet
-        //if (target != null)
-        //{
-        //    // Rotate towards the head towards the enemy
-        //    head.transform.forward = target.transform.position - transform.position;
-        //}
-        AimConstraint
+        //Check if another turret has not destroyed this enemy yet
+        if (target != null)
+        {
+            // Rotate towards the head towards the enemy
+            head.transform.forward = transform.position - target.transform.position;
+        }
     }
 
     private void Shoot()
