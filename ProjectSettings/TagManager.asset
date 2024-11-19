@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Defense
   - Table
+  - Base
+  - Enemies
+  - Hand
   layers:
   - Default
   - TransparentFX
