@@ -1,3 +1,4 @@
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -15,8 +16,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected enemyStates states;
 
+    [SerializeField] private float speed;
+
     // Move to the base
-    private float speed = 0.01f;
     private GameObject homeBase;
 
     // Move to turret
@@ -43,6 +45,8 @@ public class Enemy : MonoBehaviour
     private EnemyHealth health;
 
     private EnemyWaveSpawner enemySpawner;
+
+    private float closestDist = Mathf.Infinity;
 
     protected virtual void Start()
     {
@@ -124,13 +128,37 @@ public class Enemy : MonoBehaviour
         // If a turret has been found move towards that turret first to destroy it, once it is gone move towards the base again
         if (colliders.Length > 0)
         {
-            FoundTurret();
-            states = enemyStates.moveToTurret;
+            foundTurret = GetClosestTurret(colliders).gameObject;
+            float baseDist = Vector3.Distance(homeBase.transform.position, this.transform.position);
+            float turretDist = Vector3.Distance(foundTurret.transform.position, this.transform.position);
+            if(turretDist < baseDist)
+            {
+                states = enemyStates.moveToTurret;
+            }
+            else
+            {
+                states = enemyStates.moveToBase;
+            }
         }
-        else
+    }
+
+    Transform GetClosestTurret(Collider[] colliders)
+    {
+        Transform closestTurret = null;
+
+        foreach (var collider in colliders)
         {
-            //states = enemyStates.moveToBase;
+            if(collider.GetComponent<Turrets>().IsPlaced)
+            {
+                float dist = Vector3.Distance(collider.transform.position, this.transform.position);
+                if (dist < closestDist)
+                {
+                    closestTurret = collider.transform;
+                    closestDist = dist;
+                }
+            }
         }
+        return closestTurret;
     }
 
     // If there is no more health, then die
@@ -150,15 +178,6 @@ public class Enemy : MonoBehaviour
         // Enemy moves towards the base
         Vector3 targetPos = Vector3.MoveTowards(transform.position, homeBase.transform.position, speed);
         transform.position = targetPos;
-    }
-
-    // Find the turret to focus it
-    private void FoundTurret()
-    {
-        if (foundTurret == null)
-        {
-            foundTurret = GameObject.FindGameObjectWithTag("Defense");
-        }
     }
 
     private void MoveToTurretState()
@@ -227,7 +246,7 @@ public class Enemy : MonoBehaviour
     }
 
     // If enemy does not have any health, it will die
-    private void DeathState()
+    public void DeathState()
     {
         enemySpawner.RemoveEnemies(enemySpawner.enemy);
         health.currentHealth = 0;

@@ -4,7 +4,7 @@ using UnityEngine;
 public class BaseHealth : MonoBehaviour
 {
     // Health
-    private float maxHealth = 10;
+    private float maxHealth = 10000;
     public float currentHealth;
 
     private void Start()
