@@ -158,7 +158,6 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
-
         return closestTurret;
     }
 
