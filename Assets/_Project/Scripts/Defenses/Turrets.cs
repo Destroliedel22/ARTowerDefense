@@ -11,12 +11,6 @@ public abstract class Turrets : MonoBehaviour, IHold
     protected bool enemyInRange = false;
     protected GameObject target;
 
-    // Health
-    private TurretHealth health;
-
-    // Placed on playfield true or false
-    public bool IsPlaced = false;
-
     // States for all the turrets
     protected enum turretStates
     {
@@ -25,14 +19,24 @@ public abstract class Turrets : MonoBehaviour, IHold
         die
     }
 
+    [SerializeField] protected turretStates states;
+
     private Rigidbody rb;
 
-    [SerializeField] protected turretStates states;
+    // Health
+    private TurretHealth health;
+
+    // Placed on playfield true or false
+    public bool IsPlaced = false;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         health = GetComponent<TurretHealth>();
+
+        // Temporary for unity testing
+        IsPlaced = true;
     }
 
     private void Update()

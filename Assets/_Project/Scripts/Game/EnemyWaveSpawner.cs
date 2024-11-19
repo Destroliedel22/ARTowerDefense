@@ -34,8 +34,6 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         Instantiate(enemy, transform.position, transform.rotation);
-        Instantiate(enemy, transform.position + new Vector3(transform.position.x + 0.01f, transform.position.y, transform.position.z), transform.rotation);
-        Instantiate(enemy, transform.position + new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.01f), transform.rotation);
         AddEnemies(enemy);
     }
 
