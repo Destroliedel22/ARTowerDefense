@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     private GameObject homeBase;
 
     // Move to turret
-    private GameObject foundTurret;
+    [SerializeField] private GameObject foundTurret;
 
     // Change this bool in an ontriggerenter
     public bool reachedBase = false;
@@ -117,31 +117,6 @@ public class Enemy : MonoBehaviour
         CheckForDeath();
     }
 
-    // Check if there are any enemies within attack range
-    private void LookForTurret()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, turretLayer);
-        // If a turret has been found move towards that turret first to destroy it, once it is gone move towards the base again
-        if (colliders.Length > 0)
-        {
-            FoundTurret();
-            states = enemyStates.moveToTurret;
-        }
-        else
-        {
-            //states = enemyStates.moveToBase;
-        }
-    }
-
-    // If there is no more health, then die
-    private void CheckForDeath()
-    {
-        if (health.currentHealth <= 0)
-        {
-            states = enemyStates.die;
-        }
-    }
-
     private void MoveToBaseState()
     {
         // Enemy looks at the base
@@ -152,6 +127,25 @@ public class Enemy : MonoBehaviour
         transform.position = targetPos;
     }
 
+        // Check if there are any enemies within attack range
+    private void LookForTurret()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, turretLayer);
+        // If a turret has been found move towards that turret first to destroy it, once it is gone move towards the base again
+        if (colliders.Length > 0)
+        {
+            FoundTurret();
+            states = enemyStates.moveToTurret;
+
+            ReachedTurret();
+        }
+        else
+        {
+            // Reset turret
+            //foundTurret = null;
+        }
+    }
+
     // Find the turret to focus it
     private void FoundTurret()
     {
@@ -159,11 +153,15 @@ public class Enemy : MonoBehaviour
         {
             foundTurret = GameObject.FindGameObjectWithTag("Defense");
         }
+        else
+        {
+            // Stop looking for turret when it is destroyed (in Turret script when destroyed?)
+        }
     }
 
     private void MoveToTurretState()
     {
-        if(foundTurret.GetComponentInParent<TurretOne>().IsPlaced)
+        if (foundTurret.GetComponentInParent<TurretOne>().IsPlaced)
         {
             // Enemy looks at the turret
             transform.LookAt(foundTurret.transform.position);
@@ -171,9 +169,6 @@ public class Enemy : MonoBehaviour
             // Enemy moves towards the turret
             Vector3 targetPos = Vector3.MoveTowards(transform.position, foundTurret.transform.position, speed);
             transform.position = targetPos;
-
-            // Right place?????????????????????????????
-            ReachedTurret();
         }
     }
 
@@ -182,10 +177,6 @@ public class Enemy : MonoBehaviour
         if (reachedTurret)
         {
             states = enemyStates.attackTurret;
-        }
-        else
-        {
-            states = enemyStates.moveToTurret;
         }
     }
 
@@ -210,19 +201,32 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    #region Attack in animation
     // Get this function in the animation to damage the base
     private void AttackBase()
     {
         baseHealth.TakeDamage(enemyStrength);
     }
 
-    // Get this function in the animation to damage the turrets/////////////////////////////////////////////////////////////////////////////////////////doesnt work
+    // Get this function in the animation to damage the turrets
     private void AttackTurret()
     {
-        turretHealth = gameObject.GetComponent<TurretHealth>();
-        if (turretHealth != null)
+        turretHealth = foundTurret.GetComponent<TurretHealth>();
+        turretHealth.TakeDamage(enemyStrength);
+
+/*        if (turretHealth == null)
         {
-            turretHealth.TakeDamage(enemyStrength);
+            states = enemyStates.moveToBase;
+        } */
+    }
+    #endregion
+
+    // If there is no more health, then die
+    private void CheckForDeath()
+    {
+        if (health.currentHealth <= 0)
+        {
+            states = enemyStates.die;
         }
     }
 

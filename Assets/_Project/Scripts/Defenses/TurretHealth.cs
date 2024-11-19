@@ -22,6 +22,7 @@ public class TurretHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            Destroy(gameObject);
         }
     }
 
