@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states: 0
+  speed: 0.001
   reachedBase: 0
   reachedTurret: 0
   turretLayer:

@@ -1,9 +1,12 @@
 using Oculus.Interaction;
+using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class DefenseDetection : MonoBehaviour
 {
+    public List<GameObject> PlacedTurrets = new List<GameObject>();
+
     private GameObject grabObject;
     private LockPlayfield lockPlayfield;
 
@@ -27,6 +30,7 @@ public class DefenseDetection : MonoBehaviour
                 defense.transform.rotation = Quaternion.Euler(0, 0, 0);
                 defense.GetNamedChild("[BuildingBlock] HandGrab").SetActive(false);
                 defense.GetComponent<TurretOne>().IsPlaced = true;
+                PlacedTurrets.Add(defense);
             }
         }
     }
