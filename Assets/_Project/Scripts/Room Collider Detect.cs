@@ -19,6 +19,7 @@ public class RoomColliderDetection : MonoBehaviour
         }
     }
 
+    //adds script to all colliders in the room
     private void AddColliders()
     {
         if(room != null)
@@ -30,11 +31,13 @@ public class RoomColliderDetection : MonoBehaviour
         }
     }
 
+    //gets all colliders of the room
     public void GetAllColliders()
     {
         colliders = room.GetComponentsInChildren<Collider>();
     }
 
+    //searches for the room
     IEnumerator searchForRoom()
     {
         yield return new WaitForSeconds(10f);
