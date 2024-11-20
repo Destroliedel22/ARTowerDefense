@@ -6,7 +6,7 @@ public class BeginGame : MonoBehaviour
     {
         if (other.CompareTag("Hand"))
         {
-            GameManager.Instance.gameStart = true;
+            GameManager.Instance.StartGame();
             gameObject.SetActive(false);
         }
     }
