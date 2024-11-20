@@ -6,6 +6,7 @@ public class EnemyOne : Enemy
     {
         base.Start();
         enemyStrength = 1;
+        speed = 0.005f;
     }
 
     protected override void FixedUpdate()
