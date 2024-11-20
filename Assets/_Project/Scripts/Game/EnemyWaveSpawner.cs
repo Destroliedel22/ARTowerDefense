@@ -33,8 +33,8 @@ public class EnemyWaveSpawner : MonoBehaviour
     private IEnumerator WaitForSpawn(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        Instantiate(enemy, transform.position, transform.rotation);
-        AddEnemies(enemy);
+        GameObject instantiatedEnemy = Instantiate(enemy, transform.position, transform.rotation);
+        AddEnemies(instantiatedEnemy);
     }
 
     // Add the instantiated enemies
