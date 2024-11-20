@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ReachedTurret : MonoBehaviour
+public class xReachedTurret : MonoBehaviour
 {
-    private Enemy enemy;
+/*    private Enemy enemy;
 
     // Change the bool if enemy is in range
     private void OnTriggerEnter(Collider collider)
@@ -19,5 +19,5 @@ public class ReachedTurret : MonoBehaviour
         {
             enemy.reachedTurret = false;
         }
-    }
+    }*/
 }

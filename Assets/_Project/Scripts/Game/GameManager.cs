@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     // Game // Check if player has placed the base/ field
-    private bool gameStart = false;
+    public bool gameStart = false;
 
     // Waves
     private int maxWaves;
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartGame()
+    private void StartGame()
     {
         if (gameStart)
         {
