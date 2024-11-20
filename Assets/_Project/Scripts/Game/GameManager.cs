@@ -27,9 +27,6 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    // Game // Check if player has placed the base/ field
-    public bool gameStart = false;
-
     // Waves
     private int maxWaves;
     [SerializeField] private List<int> waves = new List<int>();
@@ -49,20 +46,8 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        gameStart = true;
-    }
-
     private void Update()
     {
-        StartGame();
-
-        if (enemiesWon)
-        {
-            GameOverScreen();
-        }
-
         if (enemiesKilled)
         {
             // Removes one wave after all the enemies have been killed
@@ -73,19 +58,16 @@ public class GameManager : MonoBehaviour
         {
             StartNewRound();
         }
-    }
 
-    private void StartGame()
-    {
-        if (gameStart)
+        if (enemiesWon)
         {
-            gameStart = false;
-            StartNewRound();
+            GameOverScreen();
         }
     }
 
     private void StartNewRound()
     {
+        roundCompleted = false;
         // Add 1 round every time a round has been completed
         UpdateRound(1);
         // Then check in which round we are to set the amount of waves
@@ -139,5 +121,10 @@ public class GameManager : MonoBehaviour
         // Game over logic
         // Freeze or remove the plane
         // A button will appear from the ground up which allows you to retry or quit
+    }
+
+    public void StartGame()
+    {
+        StartNewRound();
     }
 }
