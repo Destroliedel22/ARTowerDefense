@@ -1,13 +1,10 @@
-using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LockPlayfield : MonoBehaviour
 {
-    [SerializeField] GameObject grabObject;
-
     private Canvas lockCanvas;
+    private GameObject grabObject;
 
     public bool isLocked;
     public GameObject LockedButton;
@@ -16,6 +13,7 @@ public class LockPlayfield : MonoBehaviour
     private void Awake()
     {
         lockCanvas = GetComponentInChildren<Canvas>();
+        grabObject = GetComponentInChildren<HandGrabInteractable>().gameObject;
     }
 
     //locks playfield 
@@ -26,14 +24,5 @@ public class LockPlayfield : MonoBehaviour
         UnlockedButton.SetActive(true);
         gameObject.transform.rotation = Quaternion.Euler(0f, gameObject.transform.eulerAngles.y, 0f);
         isLocked = true;
-    }
-
-    //unlocks playfield
-    public void Unlock()
-    {
-        grabObject.SetActive(true);
-        LockedButton.SetActive(true);
-        UnlockedButton.SetActive(false);
-        isLocked = false;
     }
 }
