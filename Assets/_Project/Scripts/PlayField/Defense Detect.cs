@@ -34,15 +34,4 @@ public class DefenseDetection : MonoBehaviour
             }
         }
     }
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Defense"))
-    //    {
-    //        collision.gameObject.GetComponent<Rigidbody>().useGravity = true;
-    //        collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-    //        collision.gameObject.transform.SetParent(transform);
-    //        grabObject.SetActive(true);
-    //    }
-    //}
 }
