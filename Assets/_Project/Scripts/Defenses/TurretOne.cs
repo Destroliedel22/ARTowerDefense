@@ -11,7 +11,7 @@ public class TurretOne : Turrets
     private void FixedUpdate()
     {
         // Constantly look at the enemy when it is in range
-        if (enemyInRange)
+        if (states == turretStates.attack)
         {
             FocusEnemy();
             LookAtEnemy();
