@@ -11,6 +11,8 @@ public class EnemyWaveSpawner : MonoBehaviour
     private List<GameObject> enemies = new List<GameObject>();
 
     public GameObject enemy;
+    // The instantiated clone enemy
+    public GameObject cloneEnemy;
 
     private void Update()
     {
@@ -33,8 +35,8 @@ public class EnemyWaveSpawner : MonoBehaviour
     private IEnumerator WaitForSpawn(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        GameObject instantiatedEnemy = Instantiate(enemy, transform.position, transform.rotation);
-        AddEnemies(instantiatedEnemy);
+        cloneEnemy = Instantiate(enemy, transform.position, transform.rotation);
+        AddEnemies(cloneEnemy);
     }
 
     // Add the instantiated enemies

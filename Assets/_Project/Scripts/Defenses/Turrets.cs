@@ -1,12 +1,10 @@
-using NUnit.Framework;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Turrets : MonoBehaviour, IHold
 {
     // Check for enemies
     [SerializeField] private LayerMask enemyLayer;
-    private float radius = 2;
+    private float radius = 0.4f;
     // The focused enemy
     protected bool enemyInRange = false;
     protected GameObject target;

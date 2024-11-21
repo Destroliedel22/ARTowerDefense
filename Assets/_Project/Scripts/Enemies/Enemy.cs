@@ -169,7 +169,7 @@ public class Enemy : MonoBehaviour
     // If enemy does not have any health, it will die
     public void DeathState()
     {
-        enemySpawner.RemoveEnemies(enemySpawner.enemy);
+        enemySpawner.RemoveEnemies(enemySpawner.cloneEnemy);
         health.currentHealth = 0;
         // Play dying animation
         Destroy(gameObject);
