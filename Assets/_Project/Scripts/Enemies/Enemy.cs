@@ -13,14 +13,14 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected enemyStates states;
 
-    protected float speed;
+    [SerializeField] protected float speed;
 
     // Move to the base
     private GameObject homeBase;
     private Transform target;
     private Transform currentWaypoint;
     private int wayPointIndex = 0;
-    private float rotationSpeed = 5f;
+    private float rotationSpeed = 0.2f;
 
     // Change this bool in an ontriggerenter
     public bool reachedBase = false;
@@ -115,15 +115,11 @@ public class Enemy : MonoBehaviour
 
     private void MoveToBaseState()
     {
-        // Enemy looks at the base
-        transform.LookAt(homeBase.transform.position);
-
-        // Enemy moves towards the base
-        //Vector3 targetPos = Vector3.MoveTowards(transform.position, homeBase.transform.position, speed);
-        //transform.position = targetPos;
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        RotateTowardsWayPoint();
 
+        // When enemy is at waypoint go to the next
         if (Vector3.Distance(transform.position, target.transform.position) <= 0.05f)
         {
             GetNextWayPoint();
@@ -141,6 +137,14 @@ public class Enemy : MonoBehaviour
         }
         wayPointIndex++;
         target = Waypoints.points[wayPointIndex];
+    }
+
+    // Rotate towards waypoint
+    private void RotateTowardsWayPoint()
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed);
     }
 
     // Attacking states
