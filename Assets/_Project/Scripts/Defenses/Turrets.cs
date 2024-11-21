@@ -4,9 +4,11 @@ public abstract class Turrets : MonoBehaviour, IHold
 {
     // Check for enemies
     [SerializeField] private LayerMask enemyLayer;
+
+    protected Collider[] colliders;
     private float radius = 0.4f;
     // The focused enemy
-    protected GameObject target;
+    [SerializeField]protected GameObject target;
 
     // States for all the turrets
     protected enum turretStates
@@ -51,7 +53,7 @@ public abstract class Turrets : MonoBehaviour, IHold
     // Check if there are any enemies within attack range
     private void SearchForEnemy()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, enemyLayer);
+        colliders = Physics.OverlapSphere(transform.position, radius, enemyLayer);
         // If an enemy has been found go to attack state, else go to idle state
         if (colliders.Length > 0)
         {
