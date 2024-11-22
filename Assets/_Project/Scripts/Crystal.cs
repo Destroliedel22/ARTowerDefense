@@ -8,18 +8,13 @@ public class Crystal : MonoBehaviour
 
     private GameObject miner;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Miner"))
+        if (other.gameObject.CompareTag("Miner"))
         {
-            Debug.Log("detect miner");
             inCollider = true;
+            miner = other.gameObject;
         }
-    }
-
-    private void Awake()
-    {
-        miner = FindFirstObjectByType<Miner>().gameObject;
     }
 
     private void FixedUpdate()
@@ -30,8 +25,8 @@ public class Crystal : MonoBehaviour
             {
                 miner.gameObject.transform.parent = this.gameObject.transform;
                 miner.gameObject.transform.position = this.gameObject.GetNamedChild("MinerTransform").transform.position;
+                miner.gameObject.transform.rotation = Quaternion.Euler(Vector3.zero);
                 miner.gameObject.GetComponentInChildren<CustomITransformer>().gameObject.SetActive(false);
-                Debug.Log("let go");
             }
         }
     }
