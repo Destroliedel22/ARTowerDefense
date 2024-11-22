@@ -385,7 +385,6 @@ GameObject:
   m_Component:
   - component: {fileID: 260122014480816426}
   - component: {fileID: 7310400048953752891}
-  - component: {fileID: 2890020495013994021}
   - component: {fileID: 4772494508021564180}
   - component: {fileID: 5772001661761823166}
   m_Layer: 0
@@ -405,7 +404,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7087462, z: 0, w: 0.7054636}
   m_LocalPosition: {x: -1.65, y: 0.915, z: 0.133}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5739669044998984060}
@@ -426,21 +425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 0
-  LockedButton: {fileID: 0}
-  UnlockedButton: {fileID: 0}
---- !u!114 &2890020495013994021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693266300464757789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e877e77242146348886486371a2041f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlacedTurrets: []
 --- !u!114 &4772494508021564180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1392,6 +1376,7 @@ GameObject:
   - component: {fileID: 54716905381061947}
   - component: {fileID: 5670622178681459850}
   - component: {fileID: 6068300649231160138}
+  - component: {fileID: 2665754094745744761}
   m_Layer: 0
   m_Name: Main Ground
   m_TagString: Untagged
@@ -1488,6 +1473,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2665754094745744761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534004740032818530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e877e77242146348886486371a2041f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlacedTurrets: []
 --- !u!1 &4881702851617556535
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2091,7 @@ GameObject:
   - component: {fileID: 3103363727862288831}
   - component: {fileID: 2670736508252726679}
   - component: {fileID: 2217029991246024393}
+  - component: {fileID: 72325083052991157}
   m_Layer: 0
   m_Name: Path (1)
   m_TagString: Untagged
@@ -2189,6 +2188,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &72325083052991157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7820747232516078321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee337273e6bc8f4697ff3b06bd33243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8106119696954004147
 GameObject:
   m_ObjectHideFlags: 0

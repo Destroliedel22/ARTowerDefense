@@ -44,11 +44,6 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        StartNewRound();
-    }
-
     private void Update()
     {
         if (enemiesKilled)
@@ -121,5 +116,6 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         StartNewRound();
+
     }
 }
