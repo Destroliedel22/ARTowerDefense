@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.32, y: 1.05, z: -8.83}
-  m_LocalScale: {x: 0.10869564, y: 1.8312004, z: 0.042735048}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.104196884, y: 0.16365929, z: 0.13483651}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1821473626113187933}
   - {fileID: 7061289316423883533}
@@ -110,6 +110,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 2048
+  target: {fileID: 0}
   states: 0
   IsPlaced: 0
   head: {fileID: 7560092638322960005}
@@ -5412,8 +5413,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.42170122, y: 0.45667854, z: 6.072223}
-  m_Center: {x: 0.0034345838, y: -0.027511738, z: 2.3316371}
+  m_Size: {x: 1.7238705, y: 0.7497888, z: 3.4984791}
+  m_Center: {x: -0.057030745, y: -0.1740669, z: 1.3485436}
 --- !u!114 &5457119796392366154
 MonoBehaviour:
   m_ObjectHideFlags: 0
