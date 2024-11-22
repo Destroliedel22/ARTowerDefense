@@ -19,7 +19,7 @@ public class Crystal : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(miner != null)
+        if(miner != null && miner.gameObject.GetComponent<Miner>().onCrystal == false)
         {
             if (miner.gameObject.GetComponentInChildren<CustomITransformer>().IsGrabbed == false && inCollider)
             {
@@ -27,6 +27,7 @@ public class Crystal : MonoBehaviour
                 miner.gameObject.transform.position = this.gameObject.GetNamedChild("MinerTransform").transform.position;
                 miner.gameObject.transform.rotation = Quaternion.Euler(Vector3.zero);
                 miner.gameObject.GetComponentInChildren<CustomITransformer>().gameObject.SetActive(false);
+                miner.gameObject.GetComponent<Miner>().onCrystal = true;
             }
         }
     }
