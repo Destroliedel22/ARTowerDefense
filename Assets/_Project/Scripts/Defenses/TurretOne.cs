@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class TurretOne : Turrets
@@ -11,7 +13,7 @@ public class TurretOne : Turrets
     private void FixedUpdate()
     {
         // Constantly look at the enemy when it is in range
-        if (enemyInRange)
+        if (states == turretStates.attack)
         {
             FocusEnemy();
             LookAtEnemy();
@@ -20,10 +22,16 @@ public class TurretOne : Turrets
 
     private void FocusEnemy()
     {
+        target = colliders[0].gameObject;
+        if (colliders.Contains<Collider>(target.GetComponent<Collider>()))
+        {
+            Debug.Log("Contains");
+        }
         // Set the target to the first enemy
         if (target == null)
         {
-            target = GameObject.FindWithTag("Enemies");
+
+
         }
     }
 

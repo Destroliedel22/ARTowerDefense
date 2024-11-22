@@ -1,22 +1,21 @@
-using NUnit.Framework;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Turrets : MonoBehaviour, IHold
 {
     // Check for enemies
     [SerializeField] private LayerMask enemyLayer;
-    private float radius = 2;
+
+    protected Collider[] colliders;
+    private float radius = 0.4f;
     // The focused enemy
-    protected bool enemyInRange = false;
-    protected GameObject target;
+    [SerializeField]protected GameObject target;
 
     // States for all the turrets
     protected enum turretStates
     {
         idle = 0,
         attack,
-        die
+        //die
     }
 
     [SerializeField] protected turretStates states;
@@ -24,7 +23,7 @@ public abstract class Turrets : MonoBehaviour, IHold
     private Rigidbody rb;
 
     // Health
-    private TurretHealth health;
+    //private TurretHealth health;
 
     // Placed on playfield true or false
     public bool IsPlaced = false;
@@ -33,7 +32,7 @@ public abstract class Turrets : MonoBehaviour, IHold
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        health = GetComponent<TurretHealth>();
+        //health = GetComponent<TurretHealth>();
 
         // Temporary for unity testing
         IsPlaced = true;
@@ -44,26 +43,24 @@ public abstract class Turrets : MonoBehaviour, IHold
         SearchForEnemy();
         UpdateStates();
 
-        // Put somewhere not in update
+/*        // Put somewhere not in update
         if (health.currentHealth <= 0)
         {
             states = turretStates.die;
-        }
+        }*/
     }
 
     // Check if there are any enemies within attack range
     private void SearchForEnemy()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, enemyLayer);
+        colliders = Physics.OverlapSphere(transform.position, radius, enemyLayer);
         // If an enemy has been found go to attack state, else go to idle state
         if (colliders.Length > 0)
         {
-            enemyInRange = true;
             states = turretStates.attack;
         }
         else
         {
-            enemyInRange = false;
             states = turretStates.idle;
         }
     }
@@ -77,11 +74,11 @@ public abstract class Turrets : MonoBehaviour, IHold
     // Override this state per turret for a different attack
     protected abstract void AttackingState();
 
-    private void DeathState()
+/*    private void DeathState()
     {
         // Dying animation
     }
-
+*/
     private void UpdateStates()
     {
         switch (states)
@@ -92,9 +89,9 @@ public abstract class Turrets : MonoBehaviour, IHold
             case turretStates.attack:
                 AttackingState();
                 break;
-            case turretStates.die:
+/*            case turretStates.die:
                 DeathState();
-                break;
+                break;*/
             default:
                 break;
         }
