@@ -2313,6 +2313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0d2d2435551ee44ba2b5bc84e42139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinsOnPickaxe: 1
   onCrystal: 0
 --- !u!1 &7597947748018846258
 GameObject:

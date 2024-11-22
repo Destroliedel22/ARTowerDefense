@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Miner : MonoBehaviour
 {
+    [SerializeField] private int coinsOnPickaxe;
+
     public bool onCrystal;
 
     private void Update()
@@ -18,7 +20,7 @@ public class Miner : MonoBehaviour
     {
         if (onCrystal)
         {
-            CoinManager.Instance.AddCoin(1);
+            CoinManager.Instance.AddCoin(coinsOnPickaxe);
         }
     }
 }
