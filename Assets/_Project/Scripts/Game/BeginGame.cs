@@ -8,12 +8,12 @@ public class BeginGame : MonoBehaviour
     {
         if (other.CompareTag("Hand"))
         {
-            GameManager.Instance.StartGame();
+            Begin();
             gameObject.SetActive(false);
         }
     }
 
-    public void StartGame()
+    private void Begin()
     {
         GameManager.Instance.StartGame();
         lockPlayfield.Lock();
