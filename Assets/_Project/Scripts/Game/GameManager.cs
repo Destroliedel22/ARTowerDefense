@@ -38,6 +38,18 @@ public class GameManager : MonoBehaviour
     public bool enemiesKilled = false;
     public bool enemiesWon = false;
 
+    // Gameloop
+    [SerializeField] GameObject game;
+
+    // Death explosion
+    [SerializeField] GameObject explosionPoint;
+    [SerializeField] GameObject buttons;
+    [SerializeField] private LayerMask enemyMask;
+
+    [SerializeField] private float radius;
+    [SerializeField] private float explosionForce;
+    [SerializeField] private float upwardsModifier;
+
     private void Awake()
     {
         // Set the instance, so we can change it
@@ -60,7 +72,7 @@ public class GameManager : MonoBehaviour
 
         if (enemiesWon)
         {
-            GameOverScreen();
+            GameOver();
         }
     }
 
@@ -105,17 +117,26 @@ public class GameManager : MonoBehaviour
         currentWave = maxWaves;
     }
 
-    private void GameOverScreen()
+    private void GameOver()
     {
-        Debug.Log("hiii");
-        // Game over logic
-        // Freeze or remove the plane
+        Collider[] colliders = Physics.OverlapSphere(explosionPoint.transform.position, radius, enemyMask);
+        foreach (Collider collider in colliders)
+        {
+            collider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, explosionPoint.transform.position, upwardsModifier);
+        }
+        buttons.SetActive(true);
+
         // A button will appear from the ground up which allows you to retry or quit
+    }
+
+    public void StartWave()
+    {
+        StartNewRound();
     }
 
     public void StartGame()
     {
-        StartNewRound();
+        game.SetActive(true);
 
     }
 }

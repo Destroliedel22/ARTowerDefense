@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/JordiScene.unity
     guid: fc49adbe235c4134aace1e7123c16b0a
   - enabled: 1
+    path: Assets/Scenes/JasperScene.unity
+    guid: 8e650c070feeb78419252b666356687e
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 7387ebc3ad4995b4ebb1578ba4118e0f
   m_configObjects:
