@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 2890020495013994021}
   - component: {fileID: 4772494508021564180}
   - component: {fileID: 5772001661761823166}
+  - component: {fileID: 4770836774699803659}
   m_Layer: 0
   m_Name: Map Object
   m_TagString: Untagged
@@ -411,6 +412,7 @@ Transform:
   - {fileID: 5739669044998984060}
   - {fileID: 3149621214022090199}
   - {fileID: 3288318741731272268}
+  - {fileID: 1002276054330952456}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90.266, z: 0}
 --- !u!114 &7310400048953752891
@@ -426,8 +428,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 0
-  LockedButton: {fileID: 0}
-  UnlockedButton: {fileID: 0}
 --- !u!114 &2890020495013994021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +480,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &4770836774699803659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693266300464757789}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.127354, y: 0.02593848, z: 1.9476144}
+  m_Center: {x: 0.0036144257, y: 0.00006319303, z: -0.28726816}
 --- !u!1 &2000413310459796172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,6 +2768,54 @@ MonoBehaviour:
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
+--- !u!1 &8992051615450194393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1002276054330952456}
+  - component: {fileID: 8384338192752766033}
+  m_Layer: 0
+  m_Name: CrystalSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1002276054330952456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8992051615450194393}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.28799987}
+  m_LocalScale: {x: 4.13, y: 0.03, z: 1.95}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 260122014480816426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8384338192752766033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8992051615450194393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d548399fd160c04ca3083a14cbe2af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystals:
+  - {fileID: 7798202115533432188, guid: f5db6974d2f31e249835085adcf82987, type: 3}
+  - {fileID: 151618505483504789, guid: 9bfb98de53c25b24b9b6fcb42100ffbf, type: 3}
+  - {fileID: 1216724054060746450, guid: faa573e498359dc4e8ac36c0862907a4, type: 3}
 --- !u!1 &9130889964933602620
 GameObject:
   m_ObjectHideFlags: 0
