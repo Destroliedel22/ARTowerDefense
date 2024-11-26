@@ -107,7 +107,6 @@ public class GameManager : MonoBehaviour
 
     private void GameOverScreen()
     {
-        Debug.Log("hiii");
         // Game over logic
         // Freeze or remove the plane
         // A button will appear from the ground up which allows you to retry or quit
@@ -116,6 +115,5 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         StartNewRound();
-
     }
 }

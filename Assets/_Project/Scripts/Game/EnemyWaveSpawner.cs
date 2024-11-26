@@ -8,7 +8,7 @@ public class EnemyWaveSpawner : MonoBehaviour
     // When killed remove from list
     // When list is 0 set bool
 
-    private List<GameObject> enemies = new List<GameObject>();
+    [SerializeField] private List<GameObject> enemies = new List<GameObject>();
 
     public GameObject enemy;
     // The instantiated clone enemy
