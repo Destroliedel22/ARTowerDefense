@@ -1,0 +1,39 @@
+using Oculus.Interaction;
+using System.Collections.Generic;
+using Unity.XR.CoreUtils;
+using UnityEngine;
+
+public class HandDefenseDetection : MonoBehaviour
+{
+    public List<GameObject> PlacedTurrets = new List<GameObject>();
+
+    private GameObject grabObject;
+    private Transform turretTranform;
+    private bool turretPlaced;
+
+    private void Awake()
+    {
+        turretTranform = transform.GetChild(0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Defense"))
+        {
+            GameObject defense = other.gameObject;
+            grabObject = defense.GetNamedChild("[BuildingBlock] HandGrab");
+            if (defense.GetComponentInChildren<CustomITransformer>().IsGrabbed == false && turretPlaced == false)
+            {
+                defense.GetComponent<Rigidbody>().useGravity = false;
+                defense.GetComponent<Rigidbody>().isKinematic = true;
+                defense.transform.SetParent(turretTranform);
+                defense.transform.localPosition = Vector3.zero;
+                defense.transform.localRotation = Quaternion.Euler(Vector3.zero);
+                defense.GetNamedChild("[BuildingBlock] HandGrab").SetActive(false);
+                defense.GetComponent<TurretOne>().IsPlaced = true;
+                turretPlaced = true;
+                PlacedTurrets.Add(defense);
+            }
+        }
+    }
+}
