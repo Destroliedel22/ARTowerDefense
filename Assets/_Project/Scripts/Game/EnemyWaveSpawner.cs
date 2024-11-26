@@ -28,7 +28,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnWave()
+    public void SpawnWave()
     {
         float waitForWave = 5;
 
