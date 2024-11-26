@@ -376,6 +376,17 @@ Transform:
   - {fileID: 1760536834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277985152 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5755780553033061010, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
+  m_PrefabInstance: {fileID: 1324561012}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b706f165e7f344f923edded6b3448b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &284755364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1426,15 +1437,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 663015583}
     - target: {fileID: 7679406711575287410, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 277985152}
+    - target: {fileID: 7679406711575287410, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SpawnWave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679406711575287410, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisableButton
       objectReference: {fileID: 0}
     - target: {fileID: 7679406711575287410, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: EnemyWaveSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7679406711575287410, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ButtonBehavior, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679406711575287410, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7707527950843164519, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
