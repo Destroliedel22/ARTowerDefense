@@ -50,6 +50,12 @@ public class TurretOne : Turrets
         shootingEffect.SetActive(true);
     }
 
+    public void PalmShoot()
+    {
+        shootingEffect.SetActive(true);
+        StartCoroutine(WaitForPalmShoot());
+    }
+
     private IEnumerator WaitForShoot()
     {
         yield return new WaitForSeconds(0.8f);
@@ -58,6 +64,12 @@ public class TurretOne : Turrets
         shootingEffect.SetActive(false);
         // Stop coroutine
         coroutine = null;
+    }
+
+    private IEnumerator WaitForPalmShoot()
+    {
+        yield return new WaitForSeconds(0.5f);
+        shootingEffect.SetActive(false);
     }
 
     protected override void AttackingState()
