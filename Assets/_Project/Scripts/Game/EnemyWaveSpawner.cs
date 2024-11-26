@@ -14,6 +14,10 @@ public class EnemyWaveSpawner : MonoBehaviour
     // The instantiated clone enemy
     public GameObject cloneEnemy;
 
+    [Header("Enemy waves")]
+    [SerializeField] private float enemyGroupAmount = 5;
+    [SerializeField] private float delay = 1f;
+
     private void Update()
     {
         // Not in update?
@@ -26,17 +30,23 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     private void SpawnWave()
     {
-        float waitingTime = 5;
+        float waitForWave = 5;
 
-        StartCoroutine(WaitForSpawn(waitingTime));
+        StartCoroutine(WaitForSpawn(waitForWave));
     }
 
     // Wait a while before spawning a new wave
     private IEnumerator WaitForSpawn(float waitTime)
     {
+        // First wave
         yield return new WaitForSeconds(waitTime);
-        cloneEnemy = Instantiate(enemy, transform.position, transform.rotation);
-        AddEnemies(cloneEnemy);
+
+        for (int i = 0; i < enemyGroupAmount; i++)
+        {
+            cloneEnemy = Instantiate(enemy, transform.position, transform.rotation);
+            AddEnemies(cloneEnemy);
+            yield return new WaitForSeconds(delay);
+        }
     }
 
     // Add the instantiated enemies

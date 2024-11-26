@@ -88,4 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884259ab65cfd92449da3dc282c215fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 5
+  coinText: {fileID: 0}
+  currentMoney: 0
