@@ -125,8 +125,6 @@ public class GameManager : MonoBehaviour
             collider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, explosionPoint.transform.position, upwardsModifier);
         }
         buttons.SetActive(true);
-
-        // A button will appear from the ground up which allows you to retry or quit
     }
 
     public void StartWave()
