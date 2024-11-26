@@ -41,6 +41,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         // First wave
         yield return new WaitForSeconds(waitTime);
 
+        // Enemies in a row
         for (int i = 0; i < enemyGroupAmount; i++)
         {
             cloneEnemy = Instantiate(enemy, transform.position, transform.rotation);
