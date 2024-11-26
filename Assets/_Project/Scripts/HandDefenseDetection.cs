@@ -1,4 +1,5 @@
 using Oculus.Interaction;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
@@ -34,6 +35,14 @@ public class HandDefenseDetection : MonoBehaviour
                 turretPlaced = true;
                 PlacedTurrets.Add(defense);
             }
+        }
+    }
+
+    public void TurretShoot()
+    {
+        if(turretPlaced)
+        {
+            turretTranform.GetComponentInChildren<TurretOne>().PalmShoot();
         }
     }
 }

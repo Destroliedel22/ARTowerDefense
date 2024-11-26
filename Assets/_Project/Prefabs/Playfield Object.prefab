@@ -7413,6 +7413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Playfield
       objectReference: {fileID: 0}
+    - target: {fileID: 5738110718601491790, guid: adfa89d2bc2d6924abf8335c8841e803, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7113123047960771580, guid: adfa89d2bc2d6924abf8335c8841e803, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -7612,7 +7616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b706f165e7f344f923edded6b3448b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockPlayfield: {fileID: 4377239584221854293}
 --- !u!4 &6921869134209441165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5536752491117526498, guid: 6e9060777dbda0a4bb1f1043db65c3db, type: 3}
