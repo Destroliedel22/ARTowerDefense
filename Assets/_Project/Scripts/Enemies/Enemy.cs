@@ -169,6 +169,9 @@ public class Enemy : MonoBehaviour
     // If enemy does not have any health, it will die
     public void DeathState()
     {
+        // Drop a random item when enemy dies
+        GetComponent<EnemyItemHolder>().DropItemOnDeath(transform.position);
+        // Remove from list when enemy dies
         enemySpawner.RemoveEnemies(enemySpawner.cloneEnemy);
         health.currentHealth = 0;
         // Play dying animation
