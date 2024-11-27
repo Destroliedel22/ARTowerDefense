@@ -27,12 +27,12 @@ public class GameManager : MonoBehaviour
     #endregion
 
     // Waves
-    private int currentWave = 0;
+    [SerializeField] private int currentWave = 0;
     private int maxWaves;
 
     // Rounds
-    private int currentRound = 0;
-    private bool roundCompleted = false;
+    [SerializeField] private int currentRound = 0;
+    [SerializeField] private bool roundCompleted = false;
 
     public bool canSpawnWave = false;
     public bool enemiesKilled = false;

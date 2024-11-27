@@ -39,9 +39,9 @@ public class EnemyItemHolder : MonoBehaviour
         if (item != null)
         {
             GameObject itemGameObject = Instantiate(droppedItemPrefab, dropPosition, Quaternion.identity);
-            //itemGameObject = item.itemPrefab; // ??
-            // Set child
-            item.itemPrefab.transform.parent = itemGameObject.transform; // doesnt work
+            // Get the item prefab and spawn it at the same position
+            GameObject modelPrefab = item.itemPrefab;
+            Instantiate(modelPrefab, dropPosition, Quaternion.identity, itemGameObject.transform);
         }
     }
 }

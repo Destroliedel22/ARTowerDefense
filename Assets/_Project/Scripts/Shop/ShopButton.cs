@@ -42,12 +42,19 @@ public class ShopButton : MonoBehaviour
     // When button is clicked take money
     public void PayOnClick()
     {
+        // Check money when pressed
+        CheckMoney();
+
         // Enable button
         if (isPayed)
         {
             CoinManager.Instance.RemoveCoin(cost);
             // Disable cage while item has not been taken
             cage.SetActive(false);
+        }
+        else
+        {
+            // Give feedback: cannot pay
         }
     }
 }
