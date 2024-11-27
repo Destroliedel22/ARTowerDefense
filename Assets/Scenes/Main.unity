@@ -381,17 +381,6 @@ Transform:
   - {fileID: 1760536834}
   m_Father: {fileID: 2086640595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &277985152 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5755780553033061010, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
-  m_PrefabInstance: {fileID: 1324561012}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01b706f165e7f344f923edded6b3448b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &284755364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1164,15 +1153,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 260122014480816426, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8497399
+      value: 0.63747
       objectReference: {fileID: 0}
     - target: {fileID: 260122014480816426, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19689387
+      value: -0.15559
       objectReference: {fileID: 0}
     - target: {fileID: 260122014480816426, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1054954
+      value: -0.586
       objectReference: {fileID: 0}
     - target: {fileID: 260122014480816426, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1217,7 +1206,7 @@ PrefabInstance:
     - target: {fileID: 7679406711575287410, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 277985152}
+      objectReference: {fileID: 0}
     - target: {fileID: 7679406711575287410, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DisableButton
@@ -1235,8 +1224,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8978162198057972120, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db80d568aec9f414a9187a1ed9a49559, type: 3}
@@ -1870,7 +1858,7 @@ Transform:
   m_GameObject: {fileID: 2086640594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5962603, y: 0.7568939, z: 0.027504599}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
