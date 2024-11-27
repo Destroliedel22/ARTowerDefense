@@ -31,6 +31,7 @@ public class HandDefenseDetection : MonoBehaviour
                 defense.transform.localPosition = Vector3.zero;
                 defense.transform.localRotation = Quaternion.Euler(Vector3.zero);
                 defense.GetNamedChild("[BuildingBlock] HandGrab").SetActive(false);
+                defense.GetComponent<TurretOne>().enabled = false;
                 defense.GetComponent<TurretOne>().IsPlaced = true;
                 turretPlaced = true;
                 PlacedTurrets.Add(defense);
