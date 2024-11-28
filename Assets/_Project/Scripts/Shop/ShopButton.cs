@@ -8,14 +8,9 @@ public class ShopButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI coinText;
     private bool isPayed = false;
 
-    // Item reference
-    [SerializeField] private GameObject item;
-
-    // Cage reference
+    // Item & cage reference
+    [SerializeField] private GameObject powerUp;
     [SerializeField] private GameObject cage;
-
-    // Cooldown timer
-    private float cooldown;
 
     private void Start()
     {
@@ -34,9 +29,8 @@ public class ShopButton : MonoBehaviour
     // Place new item, turn cage back on
     private void ResetItem()
     {
+        powerUp.SetActive(true);
         cage.SetActive(true);
-
-        // Instantiate item
     }
 
     // When button is clicked take money
@@ -49,6 +43,8 @@ public class ShopButton : MonoBehaviour
         if (isPayed)
         {
             CoinManager.Instance.RemoveCoin(cost);
+            // Pick up effect
+            powerUp.SetActive(false);
             // Disable cage while item has not been taken
             cage.SetActive(false);
         }
