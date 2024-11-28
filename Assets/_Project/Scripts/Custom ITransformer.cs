@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Buffers;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace Oculus.Interaction
 {
@@ -64,6 +65,14 @@ namespace Oculus.Interaction
         private GrabPointDelta[] _deltas;
 
         public bool IsGrabbed;
+
+        public enum grabState
+        {
+            unGrabbed,
+            grabbing,
+            lettingGo
+        }
+        public grabState state;
 
         private struct GrabPointDelta
         {
@@ -136,6 +145,8 @@ namespace Oculus.Interaction
             _lastScale = targetTransform.localScale;
 
             IsGrabbed = true;
+
+            state = grabState.grabbing;
         }
 
         public void UpdateTransform()
@@ -163,6 +174,15 @@ namespace Oculus.Interaction
             _deltas = null;
 
             IsGrabbed = false;
+
+            state = grabState.lettingGo;
+            StartCoroutine(waitForStatSwitch());
+        }
+
+        IEnumerator waitForStatSwitch()
+        {
+            yield return new WaitForSeconds(2f);
+            state = grabState.unGrabbed;
         }
 
         private Vector3 UpdateTransformerPointData(List<Pose> poses)

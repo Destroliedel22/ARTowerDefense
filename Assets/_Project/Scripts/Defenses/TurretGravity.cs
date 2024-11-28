@@ -3,12 +3,18 @@ using UnityEngine;
 
 public class TurretGravity : MonoBehaviour
 {
+    private CustomITransformer customITransformer;
+
+    private void Awake()
+    {
+        customITransformer = GetComponentInChildren<CustomITransformer>();
+    }
+
     void Update()
     {
-        if(GetComponentInChildren<CustomITransformer>().IsGrabbed)
+        if(customITransformer.state == CustomITransformer.grabState.lettingGo)
         {
             gameObject.GetComponent<Rigidbody>().useGravity = true;
-            gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 }
