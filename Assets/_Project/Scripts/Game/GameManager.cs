@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
         currentWave = maxWaves;
     }
 
+    // Add explosion in middle of field when the player dies
     private void GameOver()
     {
         Collider[] colliders = Physics.OverlapSphere(explosionPoint.transform.position, radius, enemyMask);

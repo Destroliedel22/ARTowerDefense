@@ -18,6 +18,7 @@ TagManager:
   - Water
   - UI
   - Spawner Contact
+  - Hands
   - Placeable Surface
   - Interactable
   - Base
@@ -25,7 +26,6 @@ TagManager:
   - Enemies
   - Mineable
   - Item
-  - 
   - 
   - 
   - 

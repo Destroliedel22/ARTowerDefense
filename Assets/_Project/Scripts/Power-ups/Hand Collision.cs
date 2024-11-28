@@ -5,17 +5,25 @@ public class HandCollision : MonoBehaviour
 {
     [SerializeField] private float waitTime = 5f;
     private Rigidbody rb;
-    private void Awake()
+    private Transform[] handObjects;
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        GetHandObjects();
     }
     private void DeactivateAbility()
     {
-        rb.excludeLayers = LayerMask.GetMask("Enemies"); ;
+        foreach (Transform t in handObjects)
+        {
+            t.gameObject.layer = LayerMask.GetMask("Hands");
+        }
     }
     public void ActivatePowerUp()
     {
-        rb.excludeLayers = LayerMask.GetMask("Nothing");
+        foreach (Transform t in handObjects)
+        {
+            t.gameObject.layer = LayerMask.GetMask("Default");
+        }
         StartCoroutine(AbilityActiveTime());
     }
 
@@ -25,4 +33,12 @@ public class HandCollision : MonoBehaviour
         DeactivateAbility();
     }
 
+    private void GetHandObjects()
+    {
+        handObjects = GetComponentInChildren<Transform[]>();
+        foreach (Transform t in handObjects)
+        {
+            t.gameObject.layer = LayerMask.GetMask("Hands");
+        }
+    }
 }
