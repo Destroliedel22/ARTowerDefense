@@ -4,8 +4,13 @@ using System.Collections;
 
 public class Buttons : MonoBehaviour
 {
-    [SerializeField] private GameObject sphere;
+    private GameObject sphere;
     float fadeAmount = 0;
+
+    private void Awake()
+    {
+        sphere = GameObject.Find("InsideSphere");
+    }
     public void Retry()
     {
         sphere.SetActive(true);
