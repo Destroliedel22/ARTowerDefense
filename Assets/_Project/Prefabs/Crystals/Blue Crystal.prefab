@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5073389280265203245}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: MinerTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 9190576538853330609}
   - component: {fileID: 4314178469864735070}
   - component: {fileID: 39203825006379990}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Blue Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: cf0045aa15ef38d4f8a11c47f3a60400, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cf0045aa15ef38d4f8a11c47f3a60400, type: 3}
       propertyPath: m_RootOrder
@@ -200,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 115658, guid: 4b3501afc9b1e564497adddaf2a1f90b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 449424, guid: 4b3501afc9b1e564497adddaf2a1f90b, type: 3}
       propertyPath: m_LocalScale.x
@@ -294,7 +294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: bca750044050e1144ba752d3ee6cfd05, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bca750044050e1144ba752d3ee6cfd05, type: 3}
       propertyPath: m_RootOrder
@@ -380,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ef35d1554ccd4b740bcbbdd0d9a886c6, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ef35d1554ccd4b740bcbbdd0d9a886c6, type: 3}
       propertyPath: m_RootOrder
@@ -466,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: c2640d54edf5a6b4183bf690fa8148a6, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c2640d54edf5a6b4183bf690fa8148a6, type: 3}
       propertyPath: m_RootOrder
@@ -532,7 +532,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 477cefcd3bb606d4989892cbea1587f0, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 477cefcd3bb606d4989892cbea1587f0, type: 3}
       propertyPath: m_RootOrder
@@ -614,7 +614,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ef35d1554ccd4b740bcbbdd0d9a886c6, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ef35d1554ccd4b740bcbbdd0d9a886c6, type: 3}
       propertyPath: m_RootOrder
@@ -700,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cf0045aa15ef38d4f8a11c47f3a60400, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cf0045aa15ef38d4f8a11c47f3a60400, type: 3}
       propertyPath: m_RootOrder
@@ -774,7 +774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ef35d1554ccd4b740bcbbdd0d9a886c6, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ef35d1554ccd4b740bcbbdd0d9a886c6, type: 3}
       propertyPath: m_RootOrder
@@ -856,7 +856,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: d76c2a466095cd14088427a6abffc0da, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d76c2a466095cd14088427a6abffc0da, type: 3}
       propertyPath: m_RootOrder

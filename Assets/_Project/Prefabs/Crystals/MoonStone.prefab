@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6878115280406438898}
   - component: {fileID: 5625691767036035255}
   - component: {fileID: 7434736033000065502}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: MoonStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6096233232732155830}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: MinerTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 7406bc5b8e13a284a929f0fb559ae654, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7406bc5b8e13a284a929f0fb559ae654, type: 3}
       propertyPath: m_RootOrder
@@ -168,7 +168,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
       propertyPath: m_RootOrder
@@ -222,7 +222,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 6ba48bbfcad5b0d46b5a027c103e194c, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6ba48bbfcad5b0d46b5a027c103e194c, type: 3}
       propertyPath: m_RootOrder
@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 136466, guid: fca5a1670e71af549b9ebfc5cad1ae18, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 431052, guid: fca5a1670e71af549b9ebfc5cad1ae18, type: 3}
       propertyPath: m_LocalScale.x
@@ -386,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 3c444d96b9ca70947b5ca926e40d1885, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3c444d96b9ca70947b5ca926e40d1885, type: 3}
       propertyPath: m_RootOrder
@@ -464,7 +464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 0dafbae71666f874b859bc029977b27b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0dafbae71666f874b859bc029977b27b, type: 3}
       propertyPath: m_RootOrder
