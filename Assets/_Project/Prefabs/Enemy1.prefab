@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states: 0
-  speed: 0.001
+  speed: 0.012
   reachedBase: 0
 --- !u!95 &6613200221751264617
 Animator:

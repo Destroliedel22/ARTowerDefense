@@ -120,7 +120,7 @@ public class Enemy : MonoBehaviour
         RotateTowardsWayPoint();
 
         // When enemy is at waypoint go to the next
-        if (Vector3.Distance(transform.position, target.transform.position) <= 0.05f)
+        if (Vector3.Distance(transform.position, target.transform.position) <= 0.1f)
         {
             GetNextWayPoint();
         }
