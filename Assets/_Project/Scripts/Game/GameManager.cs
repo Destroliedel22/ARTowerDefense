@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject game;
 
     // Death explosion
-    [SerializeField] GameObject explosionPoint;
+    private GameObject explosionPoint;
     [SerializeField] GameObject buttons;
     [SerializeField] private LayerMask enemyMask;
 
@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        explosionPoint = GameObject.Find("Explosion Point");
+
         // Set the instance, so we can change it
         instance = this;
     }
@@ -117,12 +119,14 @@ public class GameManager : MonoBehaviour
         currentWave = maxWaves;
     }
 
+    // Add explosion in middle of field when the player dies
     private void GameOver()
     {
         Collider[] colliders = Physics.OverlapSphere(explosionPoint.transform.position, radius, enemyMask);
         foreach (Collider collider in colliders)
         {
             collider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, explosionPoint.transform.position, upwardsModifier);
+            Debug.Log("BOOM");
         }
         buttons.SetActive(true);
     }

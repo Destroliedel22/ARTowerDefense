@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8585848583788803172}
   - component: {fileID: 1972360248071060145}
   - component: {fileID: 6698627802681927440}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: UnityEnemy1
   m_TagString: Enemies
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -107,12 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states: 0
-  foundTurret: {fileID: 0}
+  speed: 0
   reachedBase: 0
-  reachedTurret: 0
-  turretLayer:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!95 &1972360248071060145
 Animator:
   serializedVersion: 7
@@ -210,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1018664272722485354, guid: 1354161fad361a744b57ee89626556f1, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1354161fad361a744b57ee89626556f1, type: 3}
       propertyPath: m_Name
@@ -218,15 +214,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1354161fad361a744b57ee89626556f1, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4424396828587804706, guid: 1354161fad361a744b57ee89626556f1, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5233112405309087440, guid: 1354161fad361a744b57ee89626556f1, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
