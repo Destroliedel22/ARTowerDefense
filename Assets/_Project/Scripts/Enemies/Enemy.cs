@@ -172,7 +172,7 @@ public class Enemy : MonoBehaviour
         // Drop a random item when enemy dies
         GetComponent<EnemyItemHolder>().DropItemOnDeath(transform.position);
         // Remove from list when enemy dies
-        enemySpawner.RemoveEnemies(enemySpawner.cloneEnemy);
+        enemySpawner.RemoveEnemies(gameObject);
         health.currentHealth = 0;
         // Play dying animation
         Destroy(gameObject);
