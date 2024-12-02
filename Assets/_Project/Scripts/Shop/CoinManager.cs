@@ -24,26 +24,26 @@ public class CoinManager : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private TextMeshProUGUI coinText;
+    //[SerializeField] private TextMeshProUGUI coinText;
     public int currentMoney = 0;
 
     private void Start()
     {
-        coinText.text = currentMoney.ToString() + " $";
+        //coinText.text = currentMoney.ToString() + " $";
     }
 
     // Call function when getting money
     public void AddCoin(int amount)
     {
         currentMoney += amount;
-        coinText.text = currentMoney.ToString() + " $";
+        //coinText.text = currentMoney.ToString() + " $";
     }
 
     // Call function when spending money
     public void RemoveCoin(int amount)
     {
         currentMoney -= amount;
-        coinText.text = currentMoney.ToString() + " $";
+        //coinText.text = currentMoney.ToString() + " $";
 
         // Can't go below 0
         if (currentMoney <= 0)
