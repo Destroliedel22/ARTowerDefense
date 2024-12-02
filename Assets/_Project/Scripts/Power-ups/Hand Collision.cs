@@ -4,25 +4,32 @@ using UnityEngine;
 public class HandCollision : MonoBehaviour
 {
     [SerializeField] private float waitTime = 5f;
-    private Rigidbody rb;
-    private Transform[] handObjects;
+    [SerializeField] private Transform[] handObjects;
+
+    [SerializeField] private LayerMask handLayer;
+    [SerializeField] private LayerMask defaultLayer;
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
         GetHandObjects();
-    }
-    private void DeactivateAbility()
-    {
         foreach (Transform t in handObjects)
         {
             t.gameObject.layer = LayerMask.GetMask("Hands");
         }
     }
-    public void ActivatePowerUp()
+    private void DeactivateAbility()
     {
+        GetHandObjects();
         foreach (Transform t in handObjects)
         {
-            t.gameObject.layer = LayerMask.GetMask("Default");
+            t.gameObject.layer = LayerMask.NameToLayer("Hands");
+        }
+    }
+    public void ActivatePowerUp()
+    {
+        GetHandObjects();
+        foreach (Transform t in handObjects)
+        {
+            t.gameObject.layer = defaultLayer - 1;
         }
         StartCoroutine(AbilityActiveTime());
     }
@@ -35,10 +42,6 @@ public class HandCollision : MonoBehaviour
 
     private void GetHandObjects()
     {
-        handObjects = GetComponentInChildren<Transform[]>();
-        foreach (Transform t in handObjects)
-        {
-            t.gameObject.layer = LayerMask.GetMask("Hands");
-        }
+        handObjects = GetComponentsInChildren<Transform>();
     }
 }
