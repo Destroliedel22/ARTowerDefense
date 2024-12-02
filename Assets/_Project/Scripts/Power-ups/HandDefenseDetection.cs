@@ -1,6 +1,5 @@
 using Oculus.Interaction;
 using System.Collections;
-using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
@@ -35,7 +34,7 @@ public class HandDefenseDetection : MonoBehaviour
                 defense.transform.SetParent(turretTranform);
                 defense.transform.localPosition = Vector3.zero;
                 defense.transform.localRotation = Quaternion.Euler(Vector3.zero);
-                turretHead.transform.localRotation = Quaternion.Euler(Vector3.forward);
+                turretHead.transform.localRotation = Quaternion.Euler(new Vector3(0, -90, 0));
                 defense.GetComponent<TurretOne>().enabled = false;
                 defense.GetComponent<TurretOne>().IsPlaced = true;
                 turretPlaced = true;
