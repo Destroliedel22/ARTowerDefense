@@ -12,7 +12,7 @@ public class CrystalSpawner : MonoBehaviour
 
     private void Awake()
     {
-        playField = gameObject.transform.parent.gameObject;
+        playField = transform.parent.gameObject.GetNamedChild("Main Ground");
         playFieldSize = playField.GetComponent<Collider>().bounds.size;
     }
 
@@ -26,7 +26,7 @@ public class CrystalSpawner : MonoBehaviour
         while(spawnAmount < 10)
         {
             GameObject randomCrystal = crystals[Random.Range(0, crystals.Count)];
-            GameObject clone = Instantiate(randomCrystal, playField.transform);
+            GameObject clone = Instantiate(randomCrystal, transform.parent.parent.parent);
             Vector3 spawnPos = new Vector3(Random.Range(playFieldSize.x / 2 - playFieldSize.x / 20, -playFieldSize.x / 2 - -playFieldSize.x / 20), randomCrystal.transform.position.y, Random.Range(playFieldSize.z / 2 - playFieldSize.z / 20, -playFieldSize.z / 2 - -playFieldSize.z / 20));
             clone.transform.localPosition = spawnPos;
             spawnAmount++;
