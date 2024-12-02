@@ -42,9 +42,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject game;
 
     // Death explosion
-    [SerializeField] GameObject explosionPoint;
     [SerializeField] GameObject buttons;
     [SerializeField] private LayerMask enemyMask;
+    private GameObject explosionPoint;
 
     [SerializeField] private float radius;
     [SerializeField] private float explosionForce;
@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        explosionPoint = GameObject.Find("Explosion Point");
+
         // Set the instance, so we can change it
         instance = this;
     }
@@ -76,15 +78,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void StartNewRound()
-    {
-        // Add 1 round every time a round has been completed
-        currentRound++;
-        // Then check in which round we are to set the amount of waves
-        SetWaveAmount();
-        // Activate wave spawner
-        canSpawnWave = true;
-    }
 
     // If all the enemies have been killed and there are still waves to come, spawn new enemies
     private void UpdateWave()
@@ -119,22 +112,28 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        // Add explosion in middle of field when the player dies
         Collider[] colliders = Physics.OverlapSphere(explosionPoint.transform.position, radius, enemyMask);
         foreach (Collider collider in colliders)
         {
             collider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, explosionPoint.transform.position, upwardsModifier);
+            Debug.Log("BOOM");
         }
         buttons.SetActive(true);
     }
 
-    public void StartWave()
+    public void StartNewRound()
     {
-        StartNewRound();
+        // Add 1 round every time a round has been completed
+        currentRound++;
+        // Then check in which round we are to set the amount of waves
+        SetWaveAmount();
+        // Activate wave spawner
+        canSpawnWave = true;
     }
 
-    public void StartGame()
+    public void SpawnGame()
     {
         game.SetActive(true);
-
     }
 }

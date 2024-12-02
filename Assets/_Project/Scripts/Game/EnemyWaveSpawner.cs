@@ -17,7 +17,7 @@ public class EnemyWaveSpawner : MonoBehaviour
     [Header("Enemy waves")]
     [SerializeField] private float enemyGroupAmount = 5;
     [SerializeField] private float delay = 1f;
-
+    
     private void Update()
     {
         // Not in update?
@@ -30,7 +30,7 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     public void SpawnWave()
     {
-        float waitForWave = 5;
+        float waitForWave = 2;
 
         StartCoroutine(WaitForSpawn(waitForWave));
     }

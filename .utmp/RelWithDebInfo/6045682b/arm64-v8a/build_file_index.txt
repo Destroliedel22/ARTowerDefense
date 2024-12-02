@@ -1,0 +1,2 @@
+C:\Users\japse\Unity Projects\AR-Tower-Defense\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\japse\Unity Projects\AR-Tower-Defense\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

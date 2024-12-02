@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6838557725747605023}
   - component: {fileID: 3829011481269365232}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CrystalSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

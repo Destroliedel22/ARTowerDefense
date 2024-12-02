@@ -120,7 +120,7 @@ public class Enemy : MonoBehaviour
         RotateTowardsWayPoint();
 
         // When enemy is at waypoint go to the next
-        if (Vector3.Distance(transform.position, target.transform.position) <= 0.05f)
+        if (Vector3.Distance(transform.position, target.transform.position) <= 0.1f)
         {
             GetNextWayPoint();
         }
@@ -172,7 +172,7 @@ public class Enemy : MonoBehaviour
         // Drop a random item when enemy dies
         GetComponent<EnemyItemHolder>().DropItemOnDeath(transform.position);
         // Remove from list when enemy dies
-        enemySpawner.RemoveEnemies(enemySpawner.cloneEnemy);
+        enemySpawner.RemoveEnemies(gameObject);
         health.currentHealth = 0;
         // Play dying animation
         Destroy(gameObject);
