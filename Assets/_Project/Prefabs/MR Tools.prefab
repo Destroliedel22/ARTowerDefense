@@ -21971,7 +21971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b102c00d67eea64449e05f17208f8eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedTurrets: []
+  cooldown: 10
+  powerupCooldown: 8
 --- !u!65 &1187482905318904057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33912,7 +33913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b102c00d67eea64449e05f17208f8eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedTurrets: []
+  cooldown: 10
+  powerupCooldown: 8
 --- !u!65 &5815756922583336387
 BoxCollider:
   m_ObjectHideFlags: 0

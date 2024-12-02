@@ -6,12 +6,15 @@ using UnityEngine;
 
 public class HandDefenseDetection : MonoBehaviour
 {
-    public List<GameObject> PlacedTurrets = new List<GameObject>();
+    [SerializeField] private float cooldown;
+    [SerializeField] private float powerupCooldown;
 
-    private GameObject grabObject;
+    private GameObject defense;
+    private Transform turretParent;
     private Transform turretTranform;
     private Transform turretHead;
     private bool turretPlaced;
+    private float force = 50;
 
     private void Awake()
     {
@@ -20,10 +23,10 @@ public class HandDefenseDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Defense"))
+        if(other.gameObject.CompareTag("Defense"))
         {
-            GameObject defense = other.gameObject;
-            grabObject = defense.GetNamedChild("[BuildingBlock] HandGrab");
+            defense = other.gameObject;
+            turretParent = defense.transform.parent;
             if (defense.GetComponentInChildren<CustomITransformer>().IsGrabbed == false && turretPlaced == false)
             {
                 turretHead = defense.GetNamedChild("Head").transform;
@@ -32,14 +35,40 @@ public class HandDefenseDetection : MonoBehaviour
                 defense.transform.SetParent(turretTranform);
                 defense.transform.localPosition = Vector3.zero;
                 defense.transform.localRotation = Quaternion.Euler(Vector3.zero);
-                defense.GetNamedChild("[BuildingBlock] HandGrab").SetActive(false);
-                turretHead.transform.position = new Vector3(0, turretHead.localPosition.y, 0);
+                turretHead.transform.localRotation = Quaternion.Euler(Vector3.forward);
                 defense.GetComponent<TurretOne>().enabled = false;
                 defense.GetComponent<TurretOne>().IsPlaced = true;
                 turretPlaced = true;
-                PlacedTurrets.Add(defense);
+                StartCoroutine(TurretCooldown());
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.CompareTag("Defense"))
+        {
+            AfterCooldown();
+        }
+    }
+
+    private void AfterCooldown()
+    {
+        defense.transform.parent = turretParent;
+        defense.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Force);
+        defense.GetComponent<Rigidbody>().useGravity = true;
+        defense.GetComponent<Rigidbody>().isKinematic = false;
+        defense.GetComponent<TurretOne>().enabled = true;
+        defense.GetComponent<TurretOne>().IsPlaced = false;
+    }
+
+    IEnumerator TurretCooldown()
+    {
+        GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(cooldown);
+        AfterCooldown();
+        yield return new WaitForSeconds(powerupCooldown);
+        GetComponent<Collider>().enabled = true;
     }
 
     public void TurretShoot()
