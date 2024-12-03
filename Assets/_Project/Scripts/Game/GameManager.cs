@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         {
             // Removes one wave after all the enemies have been killed
             UpdateWave();
-        }  // maybe else { GameOverScreen } // not enemiesWon bool
+        }
 
         if (roundCompleted)
         {

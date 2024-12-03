@@ -8,6 +8,7 @@ public class HandCollision : MonoBehaviour
 
     [SerializeField] private LayerMask handLayer;
     [SerializeField] private LayerMask defaultLayer;
+
     private void Start()
     {
         GetHandObjects();
@@ -16,22 +17,10 @@ public class HandCollision : MonoBehaviour
             t.gameObject.layer = LayerMask.GetMask("Hands");
         }
     }
-    private void DeactivateAbility()
+
+    private void GetHandObjects()
     {
-        GetHandObjects();
-        foreach (Transform t in handObjects)
-        {
-            t.gameObject.layer = LayerMask.NameToLayer("Hands");
-        }
-    }
-    public void ActivatePowerUp()
-    {
-        GetHandObjects();
-        foreach (Transform t in handObjects)
-        {
-            t.gameObject.layer = defaultLayer - 1;
-        }
-        StartCoroutine(AbilityActiveTime());
+        handObjects = GetComponentsInChildren<Transform>();
     }
 
     private IEnumerator AbilityActiveTime()
@@ -40,8 +29,22 @@ public class HandCollision : MonoBehaviour
         DeactivateAbility();
     }
 
-    private void GetHandObjects()
+    private void DeactivateAbility()
     {
-        handObjects = GetComponentsInChildren<Transform>();
+        GetHandObjects();
+        foreach (Transform t in handObjects)
+        {
+            t.gameObject.layer = LayerMask.NameToLayer("Hands");
+        }
+    }
+
+    public void ActivatePowerUp()
+    {
+        GetHandObjects();
+        foreach (Transform t in handObjects)
+        {
+            t.gameObject.layer = defaultLayer - 1;
+        }
+        StartCoroutine(AbilityActiveTime());
     }
 }

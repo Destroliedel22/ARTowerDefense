@@ -39,7 +39,7 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     public void SpawnWave()
     {
-        float waitForWave = 2;
+        float waitForWave = 5;
 
         countdownTimer.remainingTime = waitForWave + 1;
         countdownTimer.cooldownActivated = true;
