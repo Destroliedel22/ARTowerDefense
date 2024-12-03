@@ -23,6 +23,8 @@ public class BaseHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            // Soundeffect
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.gameLost);
             StartCoroutine(WaitForDyingAnimation());
         }
     }
@@ -38,6 +40,8 @@ public class BaseHealth : MonoBehaviour
     // Take damage
     public void TakeDamage(float amount)
     {
+        // Soundeffect
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.baseDamage);
         currentHealth -= amount;
     }
 }

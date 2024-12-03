@@ -117,13 +117,18 @@ public class GameManager : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             collider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, explosionPoint.transform.position, upwardsModifier);
-            Debug.Log("BOOM");
+
+            // Soundeffect
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.lostExplosion);
         }
         buttons.SetActive(true);
     }
 
     public void StartNewRound()
     {
+
+        // Soundeffect
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.newRound);
         // Add 1 round every time a round has been completed
         currentRound++;
         // Then check in which round we are to set the amount of waves

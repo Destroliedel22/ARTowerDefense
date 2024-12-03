@@ -27,33 +27,33 @@ public class AudioManager : MonoBehaviour
     public AudioClip fingerInteraction;
 
     #region Singleton
-    private static AudioManager _instance;
+    private static AudioManager instance;
 
     public static AudioManager Instance
     {
         get
         {
             // Check if there is something in this instance
-            if (_instance == null)
+            if (instance == null)
             {
                 Debug.Log("AudioManager is empty");
             }
             // Return the instance to have it be read
-            return _instance;
+            return instance;
         }
     }
 
     private void Awake()
     {
         // If instance is not empty, destroy this, meaning there can be only 1 audio manager
-        if (_instance != null && _instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
             return;
         }
         else
         {
-            _instance = this;
+            instance = this;
         }
 
         DontDestroyOnLoad(this.gameObject);

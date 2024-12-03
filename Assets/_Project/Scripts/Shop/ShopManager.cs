@@ -43,6 +43,9 @@ public class ShopManager : MonoBehaviour
             getPowerUps.GetPowerUp(getPowerUps.powerUpPrefabs[powerUp], getPowerUps.cagePrefabs[powerUp]);
             int powerUpCost = getPowerUps.powerUpPrefabs[powerUp].GetComponent<PowerUpData>().cost;
 
+            // Soundeffect
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buyInShop);
+
             // Take the money
             CoinManager.Instance.RemoveCoin(powerUpCost);
 

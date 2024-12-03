@@ -29,6 +29,9 @@ public class EnemyHealth : MonoBehaviour
     // Take damage
     public void TakeDamage(float amount)
     {
+        // Soundeffect
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyTakeDamage);
+
         ShowDamage("-" + amount.ToString());
         currentHealth -= amount;
     }

@@ -47,6 +47,8 @@ public class TurretOne : Turrets
 
     private void Shoot()
     {
+        // Soundeffect
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.turretShoot);
         shootingEffect.SetActive(true);
     }
 
