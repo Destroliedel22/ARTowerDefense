@@ -1,11 +1,7 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class ShopManager : MonoBehaviour
 {
-    // Keep track if the powerups are activated
-    // Activate timer
-
     #region Singleton
     private static ShopManager instance;
 
@@ -30,20 +26,32 @@ public class ShopManager : MonoBehaviour
     }
     #endregion
 
-    // Item & cage references
-    public List<GameObject> powerUps = new List<GameObject>();
-    public List<GameObject> cages = new List<GameObject>();
+    // Shorter reference
+    private GetPowerUps getPowerUps;
 
-    // Cooldown timer
-    private float cooldown;
-
-    private void UpdatePowerUps()
+    private void Start()
     {
-
+        getPowerUps = GetPowerUps.Instance;
     }
 
-    private void CheckTimer()
+    public void BuyPowerUp(int powerUp)
     {
+        // If player has enough money, then can get the power up
+        if (CoinManager.Instance.currentMoney >= getPowerUps.powerUpPrefabs[powerUp].GetComponent<PowerUpData>().cost)
+        {
+            // Get the first from the list
+            getPowerUps.GetPowerUp(getPowerUps.powerUpPrefabs[powerUp], getPowerUps.cagePrefabs[powerUp]);
+            int powerUpCost = getPowerUps.powerUpPrefabs[powerUp].GetComponent<PowerUpData>().cost;
 
+            // Take the money
+            CoinManager.Instance.RemoveCoin(powerUpCost);
+
+            // Set inactive
+            getPowerUps.ActivatePowerup(powerUp);
+        }
+        else
+        {
+            // Give feedback
+        }
     }
 }
