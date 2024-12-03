@@ -3277,6 +3277,26 @@ PrefabInstance:
       propertyPath: instanceId
       value: 401a5333-1c52-4b4e-8427-00e2e739b85e
       objectReference: {fileID: 0}
+    - target: {fileID: 6237024067133253479, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
+      propertyPath: _pinchGrabRules._ringRequirement
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237024067133253479, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
+      propertyPath: _pinchGrabRules._indexRequirement
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237024067133253479, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
+      propertyPath: _pinchGrabRules._pinkyRequirement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237024067133253479, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
+      propertyPath: _pinchGrabRules._thumbRequirement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237024067133253479, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
+      propertyPath: _pinchGrabRules._middleRequirement
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8183583438870878872, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
       propertyPath: instanceId
       value: 57188361-e6e5-4777-8dce-27295fbde88d
