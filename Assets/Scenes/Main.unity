@@ -2238,13 +2238,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5366735336738894562, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2081443855}
-    - targetCorrespondingSourceObject: {fileID: 5007738303095488568, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1578876745}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
 --- !u!114 &964275852 stripped
 MonoBehaviour:
@@ -2508,31 +2502,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71f0d70a10b96045af5154338e9b303, type: 3}
---- !u!1 &1578876742 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5007738303095488568, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
-  m_PrefabInstance: {fileID: 964275851}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1578876745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578876742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 067516af04ba6094b8bc552b124c2099, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 5
-  handObjects: []
-  handLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  defaultLayer:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!1 &1684516653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3333,31 +3302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff579642fe87d944889e158045149371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2081443852 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5366735336738894562, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
-  m_PrefabInstance: {fileID: 964275851}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2081443855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081443852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 067516af04ba6094b8bc552b124c2099, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 5
-  handObjects: []
-  handLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  defaultLayer:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!1 &2104215749
 GameObject:
   m_ObjectHideFlags: 0

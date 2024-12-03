@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: RotateMapPowerUp
   dropChance: 2
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 3202811286856040707, guid: 077e5e041f1123146b62856f44e883dd, type: 3}
