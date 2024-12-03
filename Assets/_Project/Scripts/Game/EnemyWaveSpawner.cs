@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using Oculus.Interaction.Samples;
 
 public class EnemyWaveSpawner : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class EnemyWaveSpawner : MonoBehaviour
     [SerializeField] private float enemyGroupAmount = 5;
     [SerializeField] private float delay = 1f;
 
+    // Countdown timer
+    private CountdownTimer countdownTimer;
+
+    private void Start()
+    {
+        countdownTimer = FindFirstObjectByType<CountdownTimer>();
+    }
+
     private void Update()
     {
         // Not in update?
@@ -32,6 +41,8 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         float waitForWave = 5;
 
+        countdownTimer.remainingTime = waitForWave + 1;
+        countdownTimer.cooldownActivated = true;
         StartCoroutine(WaitForSpawn(waitForWave));
     }
 

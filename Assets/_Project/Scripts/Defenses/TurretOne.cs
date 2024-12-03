@@ -25,14 +25,14 @@ public class TurretOne : Turrets
         target = colliders[0].gameObject;
         if (colliders.Contains<Collider>(target.GetComponent<Collider>()))
         {
-            Debug.Log("Contains");
+            // What?
         }
-        // Set the target to the first enemy
+/*        // Set the target to the first enemy
         if (target == null)
         {
 
 
-        }
+        }*/
     }
 
     private void LookAtEnemy()
