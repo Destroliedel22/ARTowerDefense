@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1050940490127408961}
   - component: {fileID: 8177174969794762055}
   - component: {fileID: 7986235521324832654}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: PowerUpPlaceholder 2
   m_TagString: Defense
   m_Icon: {fileID: 0}

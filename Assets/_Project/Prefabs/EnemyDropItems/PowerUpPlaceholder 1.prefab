@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1154658035380780531}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6352213509226725218}
   - component: {fileID: 1015763478610206445}
   - component: {fileID: 4634713613920260112}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Emergency Stop Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 8120548169378282032}
   - component: {fileID: 5581674572155178432}
   - component: {fileID: 1233677564191334415}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: PowerUpPlaceholder 1
   m_TagString: Defense
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 8617542010422307850}
   - component: {fileID: 4126153257577984150}
   - component: {fileID: 3381212920286002937}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Surface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7348831438442176363}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 8118556258571850166}
   - component: {fileID: 7549123959549373780}
   - component: {fileID: 274778784772906202}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EmergencyStop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 713424202594034679}
   - component: {fileID: 2464797923022040675}
   - component: {fileID: 8865403864521578555}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: '[BuildingBlock] Poke Interaction'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2667824803931423336}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EmergencyStopOffset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 4509255392988334966}
   - component: {fileID: 8252977007296220997}
   - component: {fileID: 1718260410236956005}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ButtonVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

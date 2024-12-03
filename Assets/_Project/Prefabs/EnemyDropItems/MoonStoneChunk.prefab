@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3138123417199937168}
   - component: {fileID: 7591868744526401984}
   - component: {fileID: 2267106260087261529}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: '[BuildingBlock] HandGrab'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
       propertyPath: m_LocalScale.x
