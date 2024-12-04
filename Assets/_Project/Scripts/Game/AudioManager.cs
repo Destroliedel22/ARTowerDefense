@@ -24,7 +24,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip gameLost;
     public AudioClip lostExplosion;
     public AudioClip buttonPress;
-    public AudioClip fingerInteraction;
 
     #region Singleton
     private static AudioManager instance;

@@ -9,10 +9,14 @@ public class PowerUp1PickUp : MonoBehaviour
         if (handCollision = collision.gameObject.GetComponentInParent<HandCollision>())
         {
             handCollision.ActivatePowerUp();
+            // Soundeffect
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.powerUpActive);
         }
 /*        if (collision.gameObject.layer == LayerMask.GetMask("Hands"))
         {
             //HandCollision.ActivatePowerUp();
+            // Soundeffect
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.powerUpActive);
         }*/
     }
 }

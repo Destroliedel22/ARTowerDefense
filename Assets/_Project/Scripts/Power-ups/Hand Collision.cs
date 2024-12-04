@@ -31,6 +31,8 @@ public class HandCollision : MonoBehaviour
 
     private void DeactivateAbility()
     {
+        // Soundeffect
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.powerUpEnd);
         GetHandObjects();
         foreach (Transform t in handObjects)
         {
