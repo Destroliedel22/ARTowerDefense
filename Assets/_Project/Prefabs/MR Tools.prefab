@@ -21958,7 +21958,7 @@ GameObject:
   - component: {fileID: 4226373278401907598}
   - component: {fileID: 1187482905318904057}
   m_Layer: 7
-  m_Name: TurretCollider
+  m_Name: TurretCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33997,7 +33997,7 @@ GameObject:
   - component: {fileID: 6893769672360117773}
   - component: {fileID: 5815756922583336387}
   m_Layer: 7
-  m_Name: TurretCollider
+  m_Name: TurretCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

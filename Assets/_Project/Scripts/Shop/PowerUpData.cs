@@ -16,6 +16,9 @@ public class PowerUpData : MonoBehaviour
     // Increase the cost whenever you buy one in shop
     public void IncreaseCost()
     {
-        cost += 20;
+        if (cost > 100)
+        {
+            cost += 20;
+        }
     }
 }
