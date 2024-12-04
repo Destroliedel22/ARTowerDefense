@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3138123417199937168}
   - component: {fileID: 7591868744526401984}
   - component: {fileID: 2267106260087261529}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: '[BuildingBlock] HandGrab'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
       propertyPath: m_LocalScale.x
@@ -290,6 +290,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6487505975625296768}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9202908169076561854}
   m_SourcePrefab: {fileID: 100100000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
 --- !u!1 &6842115260600190440 stripped
 GameObject:
@@ -338,7 +341,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -354,6 +357,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc73a24cf55225246830e5f40b9d8e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9202908169076561854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842115260600190440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29f38a8fef0cc54e813924cfb4456c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &6842115260600359368 stripped

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CrystalPickUp : MonoBehaviour
+public class PowerUp1PickUp : MonoBehaviour
 {
     private HandCollision handCollision;
 
@@ -10,5 +10,9 @@ public class CrystalPickUp : MonoBehaviour
         {
             handCollision.ActivatePowerUp();
         }
+/*        if (collision.gameObject.layer == LayerMask.GetMask("Hands"))
+        {
+            //HandCollision.ActivatePowerUp();
+        }*/
     }
 }

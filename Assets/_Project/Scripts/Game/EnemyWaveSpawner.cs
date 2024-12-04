@@ -39,8 +39,11 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     public void SpawnWave()
     {
-        float waitForWave = 2;
+        float waitForWave = 5;
 
+        // Soundeffect
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.newWave);
+        // Start countdown timer
         countdownTimer.remainingTime = waitForWave + 1;
         countdownTimer.cooldownActivated = true;
         StartCoroutine(WaitForSpawn(waitForWave));

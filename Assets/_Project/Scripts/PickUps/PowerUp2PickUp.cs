@@ -1,0 +1,25 @@
+using System.Collections;
+using UnityEngine;
+
+public class PowerUp2PickUp : MonoBehaviour
+{
+    [SerializeField] private GameObject turretCol1;
+    [SerializeField] private GameObject turretCol2;
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.GetMask("Hands"))
+        {
+            StartCoroutine(TurnCollidersOn());
+        }
+    }
+
+    private IEnumerator TurnCollidersOn()
+    {
+        turretCol1.SetActive(true);
+        turretCol2.SetActive(true);
+        yield return new WaitForSeconds(10);
+        turretCol1.SetActive(false);
+        turretCol2.SetActive(false);
+    }
+}

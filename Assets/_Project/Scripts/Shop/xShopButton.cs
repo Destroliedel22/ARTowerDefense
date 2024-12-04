@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class ShopButton : MonoBehaviour
+public class xShopButton : MonoBehaviour
 {
     // Money display
     [SerializeField] private int cost;

@@ -169,6 +169,8 @@ public class Enemy : MonoBehaviour
     // If enemy does not have any health, it will die
     public void DeathState()
     {
+        // Soundeffect
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyDeath);
         // Drop a random item when enemy dies
         GetComponent<EnemyItemHolder>().DropItemOnDeath(transform.position);
         // Remove from list when enemy dies
