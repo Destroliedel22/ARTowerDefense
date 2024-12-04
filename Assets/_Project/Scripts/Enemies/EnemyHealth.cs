@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    // Damage
+    // Damage feedback
     [SerializeField] private GameObject damageTextPrefab;
 
     // Health
