@@ -33,6 +33,7 @@ public class GuideVoiceManager : MonoBehaviour
             audioSource.Play();
         }
         StartCoroutine(StopAudio());
+        StartCoroutine(ReplayAudio());
     }
 
     IEnumerator StartTutorial()
@@ -46,5 +47,17 @@ public class GuideVoiceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(audioSource.clip.length + 0.5f);
         audioSource.Stop();
+    }
+
+    IEnumerator ReplayAudio()
+    {
+        yield return new WaitForSeconds(audioSource.clip.length);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+        StartCoroutine(StopAudio());
+        yield return new WaitForSeconds(5f);
+        StartCoroutine(ReplayAudio());
     }
 }
