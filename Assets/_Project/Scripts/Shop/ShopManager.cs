@@ -55,6 +55,7 @@ public class ShopManager : MonoBehaviour
         else
         {
             // Give feedback
+            // Effect
         }
     }
 }

@@ -6,12 +6,17 @@ public class PowerUp2PickUp : MonoBehaviour
     [SerializeField] private GameObject turretCol1;
     [SerializeField] private GameObject turretCol2;
 
-    private void OnCollisionEnter(Collision collision)
+/*    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.GetMask("Hands"))
         {
             StartCoroutine(TurnCollidersOn());
         }
+    }*/
+
+    public void ActivateTurretColliders()
+    {
+        StartCoroutine(TurnCollidersOn());
     }
 
     private IEnumerator TurnCollidersOn()

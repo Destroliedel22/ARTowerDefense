@@ -12,4 +12,10 @@ public class PowerUpData : MonoBehaviour
         // Display the cost per object
         coinText.text = cost.ToString() + " $";
     }
+
+    // Increase the cost whenever you buy one in shop
+    public void IncreaseCost()
+    {
+        cost += 20;
+    }
 }
