@@ -618,6 +618,11 @@ MonoBehaviour:
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
+--- !u!1 &635291524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2367146018065537143, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
+  m_PrefabInstance: {fileID: 1935954975}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &672804441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -770,7 +775,7 @@ PrefabInstance:
     - target: {fileID: 6329293980212690727, guid: 28000317501ffff4c8d871eca9d36f86, type: 3}
       propertyPath: game
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 635291524}
     - target: {fileID: 6329293980212690727, guid: 28000317501ffff4c8d871eca9d36f86, type: 3}
       propertyPath: radius
       value: 20
@@ -3172,7 +3177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2367146018065537143, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
       propertyPath: m_Name
-      value: Game (1)
+      value: Game
       objectReference: {fileID: 0}
     - target: {fileID: 2837374238176653823, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
       propertyPath: instanceId
@@ -3287,7 +3292,8 @@ PrefabInstance:
       value: ff244940-5178-4d71-90bd-f1871557f8ed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1521023901117312496, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
@@ -3296,7 +3302,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3636154706470088496, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
   m_PrefabInstance: {fileID: 1935954975}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 635291524}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff579642fe87d944889e158045149371, type: 3}
