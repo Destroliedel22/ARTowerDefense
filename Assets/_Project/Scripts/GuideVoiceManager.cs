@@ -5,6 +5,7 @@ using UnityEngine;
 public class GuideVoiceManager : MonoBehaviour
 {
     [SerializeField] public List<AudioClip> audioClips = new List<AudioClip>();
+    [SerializeField] private GameObject firstButton;
 
     private AudioSource audioSource;
     private int audioNum;
@@ -37,6 +38,7 @@ public class GuideVoiceManager : MonoBehaviour
     IEnumerator StartTutorial()
     {
         yield return new WaitForSeconds(audioSource.clip.length);
+        firstButton.SetActive(true);
         NextStep();
     }
 
