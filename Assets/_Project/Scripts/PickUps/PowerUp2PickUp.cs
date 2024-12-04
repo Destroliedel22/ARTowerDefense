@@ -16,9 +16,13 @@ public class PowerUp2PickUp : MonoBehaviour
 
     private IEnumerator TurnCollidersOn()
     {
+        // Soundeffect
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.powerUpActive);
         turretCol1.SetActive(true);
         turretCol2.SetActive(true);
         yield return new WaitForSeconds(10);
+        // Soundeffect
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.powerUpEnd);
         turretCol1.SetActive(false);
         turretCol2.SetActive(false);
     }

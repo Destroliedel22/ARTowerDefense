@@ -23,16 +23,6 @@ public class TurretOne : Turrets
     private void FocusEnemy()
     {
         target = colliders[0].gameObject;
-        if (colliders.Contains<Collider>(target.GetComponent<Collider>()))
-        {
-            // What?
-        }
-/*        // Set the target to the first enemy
-        if (target == null)
-        {
-
-
-        }*/
     }
 
     private void LookAtEnemy()

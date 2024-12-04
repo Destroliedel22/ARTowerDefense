@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class CrystalPickUp : MonoBehaviour
 {
-    private HandCollision handCollision;
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (handCollision = collision.gameObject.GetComponentInParent<HandCollision>())
+        if (collision.gameObject.layer == LayerMask.GetMask("Hands"))
         {
-            handCollision.ActivatePowerUp();
+            // Soundeffect
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.collectLoot);
+            CoinManager.Instance.AddCoin(1);
+            Destroy(gameObject);
         }
     }
 }
