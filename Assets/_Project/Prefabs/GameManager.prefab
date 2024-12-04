@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2005118076041047684}
   - component: {fileID: 5806580244754250915}
   - component: {fileID: 6329293980212690727}
-  - component: {fileID: 3574355376223194738}
   - component: {fileID: 4963038273184556589}
+  - component: {fileID: 1163506398831737741}
+  - component: {fileID: 5442511549666331045}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -61,11 +62,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4158666024619464d8400914c3794dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWave: 0
+  currentRound: 0
+  roundCompleted: 0
   canSpawnWave: 0
   enemiesKilled: 0
   enemiesWon: 0
   game: {fileID: 0}
-  explosionPoint: {fileID: 0}
   buttons: {fileID: 0}
   enemyMask:
     serializedVersion: 2
@@ -73,18 +76,6 @@ MonoBehaviour:
   radius: 10
   explosionForce: 5
   upwardsModifier: 1
---- !u!114 &3574355376223194738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2542707488445500936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45baf03b1f39df244a6296ef9a57d3bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4963038273184556589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,3 +90,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinText: {fileID: 0}
   currentMoney: 0
+--- !u!114 &1163506398831737741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542707488445500936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39e12684a814ee4db7699791087d5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cagePrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &5442511549666331045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542707488445500936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c16329aaecade48b9bf106eb5cbfdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
+  timerCanvas: {fileID: 0}
+  remainingTime: 5
+  cooldownActivated: 0
