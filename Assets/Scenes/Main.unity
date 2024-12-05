@@ -1875,6 +1875,10 @@ PrefabInstance:
       propertyPath: coinText
       value: 
       objectReference: {fileID: 1970105196}
+    - target: {fileID: 4963038273184556589, guid: 28000317501ffff4c8d871eca9d36f86, type: 3}
+      propertyPath: currentMoney
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5442511549666331045, guid: 28000317501ffff4c8d871eca9d36f86, type: 3}
       propertyPath: timerText
       value: 
@@ -2266,15 +2270,19 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4967062914315718138, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.919998
-      objectReference: {fileID: 0}
     - target: {fileID: 6140651716007510816, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 882722803}
     - target: {fileID: 6693963717173105783, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 855990853}
+    - target: {fileID: 7038924840862948743, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 855990853}
+    - target: {fileID: 7535327839089493224, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
       propertyPath: sphere
       value: 
       objectReference: {fileID: 855990853}
@@ -2466,18 +2474,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1085502616027855025, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-      propertyPath: cost
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1372724301493751404, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 882722803}
-    - target: {fileID: 1372724301493751404, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySFX
-      objectReference: {fileID: 0}
     - target: {fileID: 2269420212583609373, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
       propertyPath: m_Name
       value: TempShop
@@ -2538,57 +2538,26 @@ PrefabInstance:
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
       objectReference: {fileID: 197421806}
-    - target: {fileID: 3287460770052795215, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySFX
-      objectReference: {fileID: 0}
-    - target: {fileID: 3287460770052795215, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: ActivatePowerUp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3287460770052795215, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: ActivatePowerUp
-      objectReference: {fileID: 0}
     - target: {fileID: 3297685487828153173, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 882722803}
-    - target: {fileID: 3297685487828153173, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySFX
-      objectReference: {fileID: 0}
-    - target: {fileID: 3410863272655748901, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-      propertyPath: cost
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4273778526232405179, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
       propertyPath: turretPlatform
       value: 
       objectReference: {fileID: 1928836840}
-    - target: {fileID: 6483416320232194986, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-      propertyPath: cost
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9042084243121052641, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
+    - target: {fileID: 9220817647447423457, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
       propertyPath: turretCol1
       value: 
       objectReference: {fileID: 197421804}
-    - target: {fileID: 9042084243121052641, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
+    - target: {fileID: 9220817647447423457, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
       propertyPath: turretCol2
       value: 
       objectReference: {fileID: 197421803}
-    m_RemovedComponents:
-    - {fileID: 936502144699328842, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-    - {fileID: 2300280957830086753, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-    - {fileID: 9038354663730526029, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-    - {fileID: 9042084243121052641, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2269420212583609373, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1970105202}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
 --- !u!114 &1970105196 stripped
 MonoBehaviour:
@@ -2621,20 +2590,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2269420212583609373, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
   m_PrefabInstance: {fileID: 1970105195}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1970105202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970105200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a436a315684a3041a05a5c2c002bba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turretCol1: {fileID: 197421804}
-  turretCol2: {fileID: 197421803}
 --- !u!1 &2086088947
 GameObject:
   m_ObjectHideFlags: 0
