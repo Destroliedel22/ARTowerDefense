@@ -15,7 +15,6 @@ public class DefenseDetection : MonoBehaviour
         Debug.Log("collisiom");
         if (collision.gameObject.CompareTag("Defense"))
         {
-            Debug.Log("collide");
             GameObject defense = collision.gameObject;
             //grabObject = defense.GetNamedChild("[BuildingBlock] HandGrab");
             if (defense.GetComponentInChildren<CustomITransformer>().state == CustomITransformer.grabState.unGrabbed)

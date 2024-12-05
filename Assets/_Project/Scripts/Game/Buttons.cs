@@ -7,16 +7,6 @@ public class Buttons : MonoBehaviour
     [SerializeField] private GameObject sphere;
     float fadeAmount = 0;
 
-    private void Awake()
-    {
-        //sphere = GameObject.Find("InsideSphere");
-    }
-
-    private void Start()
-    {
-        sphere.SetActive(false);
-    }
-
     public void Retry()
     {
         sphere.SetActive(true);
