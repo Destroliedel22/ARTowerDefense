@@ -39,7 +39,8 @@ public class GameManager : MonoBehaviour
     public bool enemiesWon = false;
 
     // Gameloop
-    [SerializeField] GameObject game;
+    [SerializeField] private GameObject game;
+    [SerializeField] private GameObject shop;
 
     // Death explosion
     [SerializeField] GameObject buttons;
@@ -140,5 +141,6 @@ public class GameManager : MonoBehaviour
     public void SpawnGame()
     {
         game.SetActive(true);
+        shop.SetActive(true);
     }
 }

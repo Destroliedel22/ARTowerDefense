@@ -6,13 +6,11 @@ public class PowerUp2PickUp : MonoBehaviour
     [SerializeField] private GameObject turretCol1;
     [SerializeField] private GameObject turretCol2;
 
-/*    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        if (collision.gameObject.layer == LayerMask.GetMask("Hands"))
-        {
-            StartCoroutine(TurnCollidersOn());
-        }
-    }*/
+        turretCol1.SetActive(false);
+        turretCol2.SetActive(false);
+    }
 
     public void ActivateTurretColliders()
     {
@@ -25,7 +23,7 @@ public class PowerUp2PickUp : MonoBehaviour
         AudioManager.Instance.PlaySFX(AudioManager.Instance.powerUpActive);
         turretCol1.SetActive(true);
         turretCol2.SetActive(true);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(20);
         // Soundeffect
         AudioManager.Instance.PlaySFX(AudioManager.Instance.powerUpEnd);
         turretCol1.SetActive(false);

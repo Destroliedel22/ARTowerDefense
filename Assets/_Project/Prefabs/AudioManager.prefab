@@ -48,14 +48,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 790469815153784323}
   SFXSource: {fileID: 7259592628879582866}
-  background: {fileID: 0}
-  coin: {fileID: 0}
-  explosion: {fileID: 0}
-  heart: {fileID: 0}
-  hurt: {fileID: 0}
-  star: {fileID: 0}
-  water: {fileID: 0}
-  jump: {fileID: 0}
+  background: {fileID: 8300000, guid: 2daf3115e2f08ce41aac9cbff7f2be24, type: 3}
+  newRound: {fileID: 8300000, guid: 8a31c4197c9dba148a9c12da04cefa99, type: 3}
+  newWave: {fileID: 8300000, guid: a144476cf41dfcd4d88b022413292f82, type: 3}
+  enemyDeath: {fileID: 8300000, guid: 6805a5d112d7e8e46b591869d3346625, type: 3}
+  enemyTakeDamage: {fileID: 8300000, guid: 79503c962fcab2240a06759e8df7d00d, type: 3}
+  enemyHitWithHands: {fileID: 8300000, guid: 0f96efecd87e445408708979dd2cadd9, type: 3}
+  baseDamage: {fileID: 8300000, guid: 2a4790c139b37c9489479fee5caf2f98, type: 3}
+  collectLoot: {fileID: 8300000, guid: 13c1e90d93a4b5b49baef10fba480749, type: 3}
+  buyInShop: {fileID: 8300000, guid: 2c6b06b710663d84b88d32dab173a466, type: 3}
+  powerUpActive: {fileID: 8300000, guid: ddfe08dec1632474884740b94f1a23ed, type: 3}
+  powerUpEnd: {fileID: 8300000, guid: 211f0daab7b370846a89cbf9262f3c23, type: 3}
+  turretShoot: {fileID: 8300000, guid: ab29cb418524b6a44a417de9076125ce, type: 3}
+  turretPlaced: {fileID: 8300000, guid: ef79a75d3330a6140a9af7adf1a3f0cf, type: 3}
+  gameWon: {fileID: 0}
+  gameLost: {fileID: 8300000, guid: 29e5fa77885d51b4b8f9c54f759b106e, type: 3}
+  lostExplosion: {fileID: 8300000, guid: 4cdf35fc548a7364b86e1cb9a48b1c19, type: 3}
+  buttonPress: {fileID: 8300000, guid: 81abb49158ad70b4b814751736d73312, type: 3}
 --- !u!1 &1853361632879565798
 GameObject:
   m_ObjectHideFlags: 0

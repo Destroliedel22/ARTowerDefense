@@ -12,7 +12,8 @@ public class BuyTurret : MonoBehaviour
 
     public void GetTurret()
     {
+        Vector3 spawnPos = new Vector3(turretPlatform.transform.position.x, turretPlatform.transform.position.y + 0.001f, turretPlatform.transform.position.z);
         turretPlatform.SetActive(true);
-        Instantiate(turretPrefab, turretPlatform.transform.position, Quaternion.identity);
+        Instantiate(turretPrefab, spawnPos, Quaternion.identity);
     }
 }
