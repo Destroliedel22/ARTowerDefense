@@ -6,11 +6,11 @@ public class GetPowerUps : MonoBehaviour
 {
     // The selected power up and cage (the one purchased on click)
     private GameObject selectedPowerUp;
-    private GameObject selectedCage;
+    //private GameObject selectedCage;
 
     // Item & cage reference
     public List<GameObject> powerUpPrefabs = new List<GameObject>();
-    public List<GameObject> cagePrefabs = new List<GameObject>();
+    //public List<GameObject> cagePrefabs = new List<GameObject>();
 
     #region Singleton
     private static GetPowerUps instance;
@@ -41,7 +41,7 @@ public class GetPowerUps : MonoBehaviour
     {
         yield return new WaitForSeconds(cooldown);
         powerUpPrefabs[powerUp].SetActive(true);
-        cagePrefabs[powerUp].SetActive(true);
+        //cagePrefabs[powerUp].SetActive(true);
     }
 
     // Have this be the reference to change the active power up
@@ -50,23 +50,22 @@ public class GetPowerUps : MonoBehaviour
         return selectedPowerUp;
     }
 
-    public GameObject GetSelectedCage()
+/*    public GameObject GetSelectedCage()
     {
         return selectedCage;
-    }
+    }*/
 
     // Reference the prefabs
-    public void GetPowerUp(GameObject powerUp, GameObject cage)
+    public void GetPowerUp(GameObject powerUp/*, GameObject cage*/)
     {
         selectedPowerUp = powerUp;
-        selectedCage = cage;
+        //selectedCage = cage;
     }
 
     // Remove the cage so the player can grab the powerup
     public void ActivatePowerup(int powerUp)
     {
-        //powerUpPrefabs[powerUp].SetActive(false);
-        cagePrefabs[powerUp].SetActive(false);
+        //cagePrefabs[powerUp].SetActive(false);
 
         StartCoroutine(CooldownTimer(powerUp, 5));
     }

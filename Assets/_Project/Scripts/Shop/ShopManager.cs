@@ -40,7 +40,7 @@ public class ShopManager : MonoBehaviour
         if (CoinManager.Instance.currentMoney >= getPowerUps.powerUpPrefabs[powerUp].GetComponent<PowerUpData>().cost)
         {
             // Get the first from the list
-            getPowerUps.GetPowerUp(getPowerUps.powerUpPrefabs[powerUp], getPowerUps.cagePrefabs[powerUp]);
+            getPowerUps.GetPowerUp(getPowerUps.powerUpPrefabs[powerUp]/*, getPowerUps.cagePrefabs[powerUp]*/);
             int powerUpCost = getPowerUps.powerUpPrefabs[powerUp].GetComponent<PowerUpData>().cost;
 
             // Soundeffect
