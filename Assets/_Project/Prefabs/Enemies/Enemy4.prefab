@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageTextPrefab: {fileID: 30590758695398320, guid: a0a5d32734339814db171c646fc9ecba, type: 3}
+  damageEffect: {fileID: 1899347389197614479, guid: cacbf624bf3d82e4db02d57dcda5f8bb, type: 3}
   maxHealth: 8
   currentHealth: 0
 --- !u!114 &6351831720112598105

@@ -345,6 +345,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322d0d9e6ac1ade46a22826dc16abf0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5450573678648123502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1600858744646986251}
+  m_Layer: 0
+  m_Name: DamagePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1600858744646986251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450573678648123502}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.491, y: -0.22, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2329683975487981032}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7840422036059083064
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +611,14 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 5538496652316499886, guid: f146996f7e427c2449066516705ee458, type: 3}
+      propertyPath: damageEffect
+      value: 
+      objectReference: {fileID: 5989566325516918902, guid: a70b06e7da39ace479c4dae73925e0d6, type: 3}
+    - target: {fileID: 5538496652316499886, guid: f146996f7e427c2449066516705ee458, type: 3}
+      propertyPath: damagePosition
+      value: 
+      objectReference: {fileID: 1600858744646986251}
     - target: {fileID: 6565367893552351325, guid: f146996f7e427c2449066516705ee458, type: 3}
       propertyPath: enemies1.Array.size
       value: 9
@@ -717,6 +756,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2549700430555266620, guid: f146996f7e427c2449066516705ee458, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2395706226628478450}
+    - targetCorrespondingSourceObject: {fileID: 2549700430555266620, guid: f146996f7e427c2449066516705ee458, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1600858744646986251}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4893172209705742942, guid: f146996f7e427c2449066516705ee458, type: 3}
       insertIndex: -1
