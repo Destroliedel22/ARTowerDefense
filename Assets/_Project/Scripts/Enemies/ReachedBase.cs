@@ -10,6 +10,8 @@ public class ReachedBase : MonoBehaviour
         if (enemy = collider.GetComponent<Enemy>())
         {
             enemy.reachedBase = true;
+            // Kill enemy after 2 seconds
+            Destroy(enemy.gameObject, 1);
         }
     }
 
@@ -18,8 +20,6 @@ public class ReachedBase : MonoBehaviour
         if (enemy = collider.GetComponent<Enemy>())
         {
             enemy.reachedBase = false;
-            // Kill enemy after 2 seconds
-            Destroy(enemy.gameObject, 2);
         }
     }
 }
