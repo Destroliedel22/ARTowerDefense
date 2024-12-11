@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class EnemyOne : Enemy // Slime
+public class EnemyTwo : Enemy // Spider
 {
     protected override void Start()
     {
         base.Start();
         enemyStrength = 1;
-        speed = 0.1f;
+        speed = 0.13f;
     }
 
     protected override void FixedUpdate()

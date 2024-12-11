@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     private int maxWaves;
 
     // Rounds
-    [SerializeField] private int currentRound = 0;
+    public int currentRound = 0;
     [SerializeField] private bool roundCompleted = false;
 
     public bool canSpawnWave = false;
@@ -47,9 +47,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     private GameObject explosionPoint;
 
-    [SerializeField] private float radius;
-    [SerializeField] private float explosionForce;
-    [SerializeField] private float upwardsModifier;
+    private float radius = 10;
+    private float explosionForce = 5;
+    private float upwardsModifier = 1;
 
     private void Awake()
     {
@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
         {
             // Removes one wave after all the enemies have been killed
             UpdateWave();
+            // Checks for round 5
+            GameWon();
         }
 
         if (roundCompleted)
@@ -123,6 +125,14 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.PlaySFX(AudioManager.Instance.lostExplosion);
         }
         buttons.SetActive(true);
+    }
+
+    private void GameWon()
+    {
+        if (currentRound == 5)
+        {
+            // Game won logic
+        }
     }
 
     public void StartNewRound()

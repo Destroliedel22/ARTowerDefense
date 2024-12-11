@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states: 0
-  speed: 0.012
   reachedBase: 0
 --- !u!95 &6613200221751264617
 Animator:
@@ -145,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageTextPrefab: {fileID: 30590758695398320, guid: a0a5d32734339814db171c646fc9ecba, type: 3}
+  maxHealth: 6
   currentHealth: 0
 --- !u!114 &8770719395789619717
 MonoBehaviour:
@@ -161,8 +161,6 @@ MonoBehaviour:
   droppedItemPrefab: {fileID: 8131071383155921478, guid: a6871f3719a7ca64e8e877b7d5eb76ba, type: 3}
   itemList:
   - {fileID: 11400000, guid: b880732ce8d59204187a0987115b61ed, type: 2}
-  - {fileID: 11400000, guid: 3ea2bd9bddf83354f866397858ed8d3a, type: 2}
-  - {fileID: 11400000, guid: 0c00201736d248b4e88944e1514cd745, type: 2}
 --- !u!1001 &8269249437804314534
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class EnemyOne : Enemy // Slime
+public class EnemyThree : Enemy // Zombie
 {
     protected override void Start()
     {
         base.Start();
-        enemyStrength = 1;
-        speed = 0.1f;
+        enemyStrength = 2;
+        speed = 0.07f;
     }
 
     protected override void FixedUpdate()

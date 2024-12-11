@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using Oculus.Interaction.Samples;
 
 public class EnemyWaveSpawner : MonoBehaviour
 {
@@ -9,15 +8,16 @@ public class EnemyWaveSpawner : MonoBehaviour
     // When killed remove from list
     // When list is 0 set bool
 
-    [SerializeField] private List<GameObject> enemies = new List<GameObject>();
+    [SerializeField] private List<GameObject> spawnedEnemies = new List<GameObject>();
 
-    public GameObject enemy;
+    public GameObject[] enemies1;
+    public GameObject[] enemies2;
     // The instantiated clone enemy
     public GameObject cloneEnemy;
 
     [Header("Enemy waves")]
-    [SerializeField] private float enemyGroupAmount = 5;
-    [SerializeField] private float delay = 1f;
+    private float enemyGroupAmount = 2;
+    private float delay = 1f;
 
     // Countdown timer
     private CountdownTimer countdownTimer;
@@ -41,6 +41,8 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         float waitForWave = 5;
 
+        // Increase the enemies by 2 every new wave
+        IncreaseEnemyGroupAmount(2);
         // Soundeffect
         AudioManager.Instance.PlaySFX(AudioManager.Instance.newWave);
         // Start countdown timer
@@ -58,22 +60,38 @@ public class EnemyWaveSpawner : MonoBehaviour
         // Enemies in a row
         for (int i = 0; i < enemyGroupAmount; i++)
         {
-            cloneEnemy = Instantiate(enemy, transform.position, transform.rotation);
+            if (GameManager.Instance.currentRound == 1 || GameManager.Instance.currentRound == 2)
+            {
+                GameObject cloneEnemies1 = enemies1[Random.Range(0, enemies1.Length)];
+                cloneEnemy = Instantiate(cloneEnemies1, transform.position, transform.rotation);
+            }
+            else
+            {
+                GameObject cloneEnemies2 = enemies2[Random.Range(0, enemies2.Length)];
+                cloneEnemy = Instantiate(cloneEnemies2, transform.position, transform.rotation);
+            }
             AddEnemies(cloneEnemy);
+
             yield return new WaitForSeconds(delay);
         }
+    }
+
+    // Void to possibly make public for GM?
+    private void IncreaseEnemyGroupAmount(int amount)
+    {
+        enemyGroupAmount = enemyGroupAmount + amount;
     }
 
     // Add the instantiated enemies
     private void AddEnemies(GameObject addedEnemy)
     {
-        enemies.Add(addedEnemy);
+        spawnedEnemies.Add(addedEnemy);
     }
 
     // Remove the enemies in enemy script (when they die)
     public void RemoveEnemies(GameObject removedEnemy)
     {
-        enemies.Remove(removedEnemy);
+        spawnedEnemies.Remove(removedEnemy);
 
         UpdateList();
     }
@@ -81,7 +99,7 @@ public class EnemyWaveSpawner : MonoBehaviour
     private void UpdateList()
     {
         // Check if all the enemies are killed
-        if (enemies.Count == 0)
+        if (spawnedEnemies.Count == 0)
         {
             GameManager.Instance.enemiesKilled = true;
         }
