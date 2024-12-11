@@ -557,6 +557,10 @@ PrefabInstance:
       value: PowerUp2PickUp, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4273778526232405179, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
+      propertyPath: turretPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4273778526232405179, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
       propertyPath: turretPlatform
       value: 
       objectReference: {fileID: 1853476909679883566}
@@ -568,16 +572,35 @@ PrefabInstance:
       propertyPath: turretCol2
       value: 
       objectReference: {fileID: 1151570829}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4273778526232405179, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2269420212583609373, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 401016192}
   m_SourcePrefab: {fileID: 100100000, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
 --- !u!1 &401016191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2269420212583609373, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
   m_PrefabInstance: {fileID: 401016190}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &401016192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401016191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f867d4128be0a044ab2d08b0d603d7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretPlatform: {fileID: 1853476909679883566}
+  tutotialTurretPrefab: {fileID: 7622582372379723217, guid: f5e774818fadb81418b65133c046ac65, type: 3}
+  turretPrefab: {fileID: 719331679231794475, guid: b71f0d70a10b96045af5154338e9b303, type: 3}
 --- !u!1001 &468476823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103308,18 +103331,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: fdcdd8203f73dd445b20628ddd23ae13, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 468476825}
         m_TargetAssemblyTypeName: GuideVoiceManager, Assembly-CSharp
