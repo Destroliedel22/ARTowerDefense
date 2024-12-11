@@ -4,8 +4,12 @@ using UnityEngine;
 public class BaseHealth : MonoBehaviour
 {
     // Health
-    public float maxHealth = 10000;
+    public float maxHealth = 40;
     public float currentHealth;
+
+    // Damage
+    [SerializeField] private GameObject damageEffect;
+    [SerializeField] private Transform damagePosition;
 
     private void Start()
     {
@@ -42,6 +46,7 @@ public class BaseHealth : MonoBehaviour
     {
         // Soundeffect
         AudioManager.Instance.PlaySFX(AudioManager.Instance.baseDamage);
+        Instantiate(damageEffect, damagePosition.position, Quaternion.identity);
         currentHealth -= amount;
     }
 }
