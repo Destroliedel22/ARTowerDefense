@@ -10,7 +10,7 @@ public class ButtonBehavior : MonoBehaviour
 
     IEnumerator WaitForDisable()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
         gameObject.SetActive(false);
     }
 }
