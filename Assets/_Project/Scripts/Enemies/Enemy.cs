@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
         win
     }
 
-    [SerializeField] protected enemyStates states;
+    protected enemyStates states;
 
     protected float speed;
 
@@ -28,6 +28,9 @@ public class Enemy : MonoBehaviour
     // Attack
     private bool hasAttackedBase = false;
     protected float enemyStrength;
+
+    // Health
+    [SerializeField] protected GameObject dyingEffect;
 
     // Health components for damage
     private BaseHealth baseHealth;
@@ -167,7 +170,7 @@ public class Enemy : MonoBehaviour
     #endregion
 
     // If enemy does not have any health, it will die
-    public void DeathState()
+    public virtual void DeathState()
     {
         // Soundeffect
         AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyDeath);
@@ -175,6 +178,8 @@ public class Enemy : MonoBehaviour
         GetComponent<EnemyItemHolder>().DropItemOnDeath(transform.position);
         // Remove from list when enemy dies
         enemySpawner.RemoveEnemies(gameObject);
+        // Particle effect
+
         health.currentHealth = 0;
         // Play dying animation
         Destroy(gameObject);
