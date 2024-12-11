@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected enemyStates states;
 
-    [SerializeField] protected float speed;
+    protected float speed;
 
     // Move to the base
     private GameObject homeBase;

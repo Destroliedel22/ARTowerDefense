@@ -244,7 +244,7 @@ public class xEnemyWithTurret : MonoBehaviour
     // If enemy does not have any health, it will die
     public void DeathState()
     {
-        enemySpawner.RemoveEnemies(enemySpawner.enemy);
+        //enemySpawner.RemoveEnemies(enemySpawner.enemy);
         health.currentHealth = 0;
         // Play dying animation
         Destroy(gameObject);

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyOne : Enemy
+public class EnemyOne : Enemy // Slime
 {
     protected override void Start()
     {

@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private GameObject damageTextPrefab;
 
     // Health
-    private float maxHealth = 5;
+    [SerializeField] private float maxHealth = 5;
     public float currentHealth;
 
     private void Start()

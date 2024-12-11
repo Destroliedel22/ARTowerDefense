@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
     private int maxWaves;
 
     // Rounds
-    [SerializeField] private int currentRound = 0;
-    [SerializeField] private bool roundCompleted = false;
+    private bool roundCompleted = false;
+    public int currentRound = 0;
 
     public bool canSpawnWave = false;
     public bool enemiesKilled = false;
@@ -41,19 +41,24 @@ public class GameManager : MonoBehaviour
     // Gameloop
     [SerializeField] private GameObject game;
     [SerializeField] private GameObject shop;
+    [SerializeField] private GameObject buttons;
 
     // Death explosion
-    [SerializeField] GameObject buttons;
+    [SerializeField] private GameObject explosionEffect;
     [SerializeField] private LayerMask enemyMask;
     private GameObject explosionPoint;
 
-    [SerializeField] private float radius;
-    [SerializeField] private float explosionForce;
-    [SerializeField] private float upwardsModifier;
+    private float radius = 10;
+    private float explosionForce = 5;
+    private float upwardsModifier = 1;
+
+    // For firework script
+    public bool wonGame = false;
 
     private void Awake()
     {
         explosionPoint = GameObject.Find("Explosion Point");
+        explosionEffect.SetActive(false);
 
         // Set the instance, so we can change it
         instance = this;
@@ -65,6 +70,8 @@ public class GameManager : MonoBehaviour
         {
             // Removes one wave after all the enemies have been killed
             UpdateWave();
+            // Checks for round 5
+            GameWon();
         }
 
         if (roundCompleted)
@@ -118,11 +125,22 @@ public class GameManager : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             collider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, explosionPoint.transform.position, upwardsModifier);
-
-            // Soundeffect
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.lostExplosion);
         }
-        buttons.SetActive(true);
+        // Soundeffect
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.lostExplosion);
+        explosionEffect.SetActive(true);
+        game.SetActive(false);
+
+        buttons.SetActive(true); // doesnt need to?
+    }
+
+    private void GameWon()
+    {
+        if (currentRound == 5)
+        {
+            // Game won effect
+            wonGame = true;
+        }
     }
 
     public void StartNewRound()
