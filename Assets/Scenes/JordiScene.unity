@@ -88191,6 +88191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10000
   currentHealth: 0
+  damageEffect: {fileID: 0}
+  damagePosition: {fileID: 0}
 --- !u!4 &5770179019124028710
 Transform:
   m_ObjectHideFlags: 0
@@ -94252,11 +94254,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77818e61b1d54442bbc47218564bb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
-  enemy: {fileID: 5424320676245080177, guid: f310d3d53b1cfaf4fa889adb3e43e6a9, type: 3}
+  spawnedEnemies: []
+  enemies1:
+  - {fileID: 8098747115379813981, guid: 739435f8fb2cf3d4aa2f791fa07b44ba, type: 3}
+  enemies2:
+  - {fileID: 8098747115379813981, guid: 739435f8fb2cf3d4aa2f791fa07b44ba, type: 3}
   cloneEnemy: {fileID: 0}
-  enemyGroupAmount: 5
-  delay: 1
 --- !u!1 &6355692963938674536
 GameObject:
   m_ObjectHideFlags: 0
@@ -94436,7 +94439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6402091896868770136
 Transform:
   m_ObjectHideFlags: 0
