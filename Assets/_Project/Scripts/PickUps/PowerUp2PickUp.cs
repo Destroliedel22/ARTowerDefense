@@ -6,6 +6,8 @@ public class PowerUp2PickUp : MonoBehaviour
     [SerializeField] private GameObject turretCol1;
     [SerializeField] private GameObject turretCol2;
 
+    [SerializeField] private GameObject powerupPrefab;
+
     private void Start()
     {
         turretCol1.SetActive(false);
@@ -14,7 +16,17 @@ public class PowerUp2PickUp : MonoBehaviour
 
     public void ActivateTurretColliders()
     {
-        StartCoroutine(TurnCollidersOn());
+        // If player has enough money, then can get the power up
+        if (CoinManager.Instance.currentMoney >= powerupPrefab.GetComponent<PowerUpData>().cost)
+        {
+            // Take the money
+            CoinManager.Instance.RemoveCoin(powerupPrefab.GetComponent<PowerUpData>().cost);
+
+            // Increase cost
+            powerupPrefab.GetComponent<PowerUpData>().IncreaseCost();
+
+            StartCoroutine(TurnCollidersOn());
+        }
     }
 
     private IEnumerator TurnCollidersOn()

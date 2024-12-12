@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
         // Soundeffect
         AudioManager.Instance.PlaySFX(AudioManager.Instance.lostExplosion);
         explosionEffect.SetActive(true);
-        game.SetActive(false);
+        //game.SetActive(false);
 
         buttons.SetActive(true); // doesnt need to?
     }

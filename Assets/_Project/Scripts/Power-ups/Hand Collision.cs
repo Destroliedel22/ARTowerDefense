@@ -9,6 +9,8 @@ public class HandCollision : MonoBehaviour
     [SerializeField] private LayerMask handLayer;
     [SerializeField] private LayerMask defaultLayer;
 
+    [SerializeField] private GameObject powerupPrefab;
+
     private void Start()
     {
         GetHandObjects();
@@ -42,11 +44,21 @@ public class HandCollision : MonoBehaviour
 
     public void ActivatePowerUp()
     {
-        GetHandObjects();
-        foreach (Transform t in handObjects)
+        // If player has enough money, then can get the power up
+        if (CoinManager.Instance.currentMoney >= powerupPrefab.GetComponent<PowerUpData>().cost)
         {
-            t.gameObject.layer = defaultLayer - 1;
+            // Take the money
+            CoinManager.Instance.RemoveCoin(powerupPrefab.GetComponent<PowerUpData>().cost);
+
+            // Increase cost
+            powerupPrefab.GetComponent<PowerUpData>().IncreaseCost();
+
+            GetHandObjects();
+            foreach (Transform t in handObjects)
+            {
+                t.gameObject.layer = defaultLayer - 1;
+            }
+            StartCoroutine(AbilityActiveTime());
         }
-        StartCoroutine(AbilityActiveTime());
     }
 }
