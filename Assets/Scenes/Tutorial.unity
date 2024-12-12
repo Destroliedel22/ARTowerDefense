@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: d079a289de136a643b260f45ce4d0428, type: 2}
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1086,32 +1086,8 @@ PrefabInstance:
       value: 0.030905223
       objectReference: {fileID: 0}
     - target: {fileID: 3819777877631202646, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
-      propertyPath: SpawnObject
-      value: 
-      objectReference: {fileID: 5040362538914711535, guid: 50f413df04829dc4294881aa0f6fe7c7, type: 3}
-    - target: {fileID: 3819777877631202646, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
       propertyPath: CheckOverlaps
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013251446764128347, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013251446764128347, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013251446764128347, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013251446764128347, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013251446764128347, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5216678727631455949, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
       propertyPath: m_AABB.m_Center.x
