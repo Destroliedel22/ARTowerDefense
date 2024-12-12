@@ -111428,6 +111428,10 @@ PrefabInstance:
       propertyPath: turretPlatform
       value: 
       objectReference: {fileID: 1853476909679883566}
+    - target: {fileID: 6137422358811698062, guid: 036fce9993cc4b843b753a8d2ccf064e, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5367035054285116781, guid: 036fce9993cc4b843b753a8d2ccf064e, type: 3}
     m_RemovedGameObjects: []
