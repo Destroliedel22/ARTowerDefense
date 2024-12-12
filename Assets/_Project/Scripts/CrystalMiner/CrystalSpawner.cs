@@ -27,7 +27,7 @@ public class CrystalSpawner : MonoBehaviour
         {
             GameObject randomCrystal = crystals[Random.Range(0, crystals.Count)];
             GameObject clone = Instantiate(randomCrystal, transform.parent.parent.parent);
-            Vector3 spawnPos = new Vector3(Random.Range(playFieldSize.x / 2 - playFieldSize.x / 20, -playFieldSize.x / 2 - -playFieldSize.x / 20), randomCrystal.transform.position.y, Random.Range(playFieldSize.z / 2 - playFieldSize.z / 20, -playFieldSize.z / 2 - -playFieldSize.z / 20));
+            Vector3 spawnPos = new Vector3(Random.Range(playFieldSize.x / 2 - playFieldSize.x / 20, -playFieldSize.x / 2 - -playFieldSize.x / 20), randomCrystal.transform.position.y + 1, Random.Range(playFieldSize.z / 2 - playFieldSize.z / 20, -playFieldSize.z / 2 - -playFieldSize.z / 20));
             clone.transform.localPosition = spawnPos;
             spawnAmount++;
         }
