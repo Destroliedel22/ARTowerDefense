@@ -113489,7 +113489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1128137840203472802, guid: 036fce9993cc4b843b753a8d2ccf064e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2047765108758926847, guid: 036fce9993cc4b843b753a8d2ccf064e, type: 3}
       propertyPath: turretCol1
