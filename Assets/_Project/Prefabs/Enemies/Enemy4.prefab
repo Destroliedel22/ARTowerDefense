@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.695, z: 0}
-  m_LocalScale: {x: 0.054634575, y: 0.08259189, z: 0.056575276}
+  m_LocalScale: {x: 0.11674089, y: 0.15696713, z: 0.13887563}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2710333891387169065}
@@ -113,8 +113,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.250374, y: 1.1136142, z: 0.53952426}
+  m_Center: {x: 0.0013277163, y: 0.056807034, z: 0.12006599}
 --- !u!54 &3931059569106955370
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -187,6 +187,8 @@ MonoBehaviour:
   droppedItemPrefab: {fileID: 8131071383155921478, guid: a6871f3719a7ca64e8e877b7d5eb76ba, type: 3}
   itemList:
   - {fileID: 11400000, guid: b880732ce8d59204187a0987115b61ed, type: 2}
+  - {fileID: 11400000, guid: 3ea2bd9bddf83354f866397858ed8d3a, type: 2}
+  - {fileID: 11400000, guid: 0c00201736d248b4e88944e1514cd745, type: 2}
 --- !u!1001 &1898803681536170974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -338,15 +340,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1037010154502000489, guid: 33cc7634671f546458b4f5b6dbc0d785, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1037010154502000489, guid: 33cc7634671f546458b4f5b6dbc0d785, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2886289114082525138, guid: 33cc7634671f546458b4f5b6dbc0d785, type: 3}
       propertyPath: m_Name
       value: HPBarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886289114082525138, guid: 33cc7634671f546458b4f5b6dbc0d785, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6632937877238541695, guid: 33cc7634671f546458b4f5b6dbc0d785, type: 3}
       propertyPath: m_Pivot.x
