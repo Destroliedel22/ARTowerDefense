@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: CrystalChunk1
   dropChance: 80
-  itemPrefab: {fileID: 6842115260600190440, guid: 93fb46f178c5b0940bad50256bcd4e13, type: 3}
+  itemPrefab: {fileID: 2271943251580661906, guid: a54eb7b646bbc584bb67b3e7e57636e8, type: 3}
