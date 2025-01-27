@@ -157,7 +157,7 @@ public class Enemy : MonoBehaviour
         if (!hasAttackedBase)
         {
             hasAttackedBase = true;
-            animator.SetTrigger("AttackBase");
+            //animator.SetTrigger("AttackBase");
         }
     }
 
