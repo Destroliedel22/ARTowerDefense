@@ -498,6 +498,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4032568317162073945, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
+      propertyPath: powerupPrefab
+      value: 
+      objectReference: {fileID: 1970105198}
+    - target: {fileID: 4032568317162073945, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
+      propertyPath: defaultLayer.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738043280462993883, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
+      propertyPath: powerupPrefab
+      value: 
+      objectReference: {fileID: 1970105198}
+    - target: {fileID: 4738043280462993883, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
+      propertyPath: defaultLayer.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5216678727631455949, guid: 9202ae21933ebd948b89102a7f90758c, type: 3}
       propertyPath: m_AABB.m_Center.x
       value: -0.06796986
@@ -1657,6 +1673,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323076244}
   m_CullTransparentMesh: 1
+--- !u!114 &333727256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 575860135765352197, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+  m_PrefabInstance: {fileID: 1663500728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8a231dc9b20de4bbbfbc719afe6c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &354589873
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,6 +3472,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888191497}
   m_CullTransparentMesh: 1
+--- !u!114 &908087194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1274463267165207249, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+  m_PrefabInstance: {fileID: 1663500728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8a231dc9b20de4bbbfbc719afe6c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &925332269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5681010114837690351, guid: 45adbcebb3d8f204689636b69d5484a6, type: 3}
@@ -4315,6 +4353,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884259ab65cfd92449da3dc282c215fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1481565545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6527996063094571501, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+  m_PrefabInstance: {fileID: 1663500728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1521659729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1279318938108316891, guid: 143e01f4ad4a65b46856bf9976c990ca, type: 3}
@@ -4464,6 +4507,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 426057133028263269, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 908087194}
+    - target: {fileID: 426057133028263269, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 575860135765352197, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 5165247305078198504, guid: 0f0fa0e212aa7aa48a1a2e98626e508f, type: 3}
+    - target: {fileID: 1274463267165207249, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 5165247305078198504, guid: 0f0fa0e212aa7aa48a1a2e98626e508f, type: 3}
+    - target: {fileID: 1421933089031692465, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 333727256}
+    - target: {fileID: 1421933089031692465, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368274134989135758, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368274134989135758, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368274134989135758, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1481565545}
+    - target: {fileID: 5368274134989135758, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368274134989135758, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ChangeLockIcon, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5902356239198716544, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.054
@@ -4508,6 +4595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu buttons
       objectReference: {fileID: 0}
+    - target: {fileID: 6789622566755524666, guid: e0d3bad56860e614f9fbe4af0f6cf7d3, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 5165247305078198504, guid: 0f0fa0e212aa7aa48a1a2e98626e508f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
