@@ -6,7 +6,9 @@ public class GuideVoiceManager : MonoBehaviour
 {
     [SerializeField] public List<AudioClip> audioClips = new List<AudioClip>();
     [SerializeField] private GameObject firstButton;
+    [SerializeField] private GameObject tutorialButton;
 
+    private bool tutorialFinished;
     private AudioSource audioSource;
     private int audioNum;
 
@@ -21,6 +23,11 @@ public class GuideVoiceManager : MonoBehaviour
         StartCoroutine(StartTutorial());
     }
 
+    public void TutorialFinished()
+    {
+        tutorialFinished = true;
+    }
+
     public void NextStep()
     {
         if(audioNum < audioClips.Count)
@@ -32,21 +39,18 @@ public class GuideVoiceManager : MonoBehaviour
         {
             audioSource.Play();
         }
-        StartCoroutine(StopAudio());
-        StartCoroutine(ReplayAudio());
+        if(tutorialFinished == false)
+        {
+            StartCoroutine(ReplayAudio());
+        }
     }
 
     IEnumerator StartTutorial()
     {
         yield return new WaitForSeconds(audioSource.clip.length);
         firstButton.SetActive(true);
+        tutorialButton.SetActive(true);
         NextStep();
-    }
-
-    IEnumerator StopAudio()
-    {
-        yield return new WaitForSeconds(audioSource.clip.length + 0.5f);
-        audioSource.Stop();
     }
 
     IEnumerator ReplayAudio()
@@ -56,8 +60,7 @@ public class GuideVoiceManager : MonoBehaviour
         {
             audioSource.Play();
         }
-        StartCoroutine(StopAudio());
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(8f);
         StartCoroutine(ReplayAudio());
     }
 }

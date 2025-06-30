@@ -97,7 +97,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5536752491117526498}
   - component: {fileID: 5679801872460894844}
-  - component: {fileID: 2423514573159004842}
   m_Layer: 0
   m_Name: Push Button Pole
   m_TagString: Untagged
@@ -143,18 +142,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.09545325, y: 0.1037284, z: 0.09477694}
   m_Center: {x: 0, y: -0.011566475, z: 0}
---- !u!114 &2423514573159004842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473556217132435722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01b706f165e7f344f923edded6b3448b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2478727762642341960
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +381,7 @@ GameObject:
   - component: {fileID: 6287053646287749988}
   - component: {fileID: 3419201471744295805}
   - component: {fileID: 2672749070645604795}
+  - component: {fileID: 3553874727335857679}
   m_Layer: 0
   m_Name: '[BuildingBlock] Poke Interaction'
   m_TagString: Untagged
@@ -431,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: ab4bed13-4102-4ac2-bd3b-a28027123579
+  instanceId: 5329d3de-8619-458b-b210-b4eb9a45f378
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -608,20 +596,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2423514573159004842}
-        m_TargetAssemblyTypeName: ButtonBehavior, Assembly-CSharp
-        m_MethodName: DisableButton
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -643,6 +619,19 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3553874727335857679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3886723204802244568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8a231dc9b20de4bbbfbc719afe6c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphere: {fileID: 0}
 --- !u!1 &4572984690279206522
 GameObject:
   m_ObjectHideFlags: 0

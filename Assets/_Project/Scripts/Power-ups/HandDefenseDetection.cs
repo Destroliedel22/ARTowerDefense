@@ -18,7 +18,6 @@ public class HandDefenseDetection : MonoBehaviour
     private void Awake()
     {
         turretTranform = transform.GetChild(0);
-        GetComponent<Collider>().enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,5 +76,10 @@ public class HandDefenseDetection : MonoBehaviour
         {
             turretTranform.GetComponentInChildren<TurretOne>().PalmShoot();
         }
+    }
+
+    public void ActivatePowerUpTwo()
+    {
+
     }
 }

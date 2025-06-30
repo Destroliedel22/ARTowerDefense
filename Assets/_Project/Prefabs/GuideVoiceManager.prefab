@@ -49,11 +49,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 874b90314657cc343a8c3ad422528baa, type: 3}
   - {fileID: 8300000, guid: 59492bb59526c624c986e02750bc4c56, type: 3}
   - {fileID: 8300000, guid: 36ee1f44f2a81ac499ee65aca1a3811e, type: 3}
+  - {fileID: 8300000, guid: b6f07edbe271d414ead7b404b9f451d3, type: 3}
   - {fileID: 8300000, guid: 75e303a2fa2e498468c0ebd8fcabd546, type: 3}
   - {fileID: 8300000, guid: d2d82de29aaca9744a59b56dbe82edc4, type: 3}
-  - {fileID: 8300000, guid: b6f07edbe271d414ead7b404b9f451d3, type: 3}
   - {fileID: 8300000, guid: d3d0fe78b77624846b24491602145916, type: 3}
   firstButton: {fileID: 0}
+  tutorialButton: {fileID: 0}
 --- !u!82 &6787655565949774039
 AudioSource:
   m_ObjectHideFlags: 0

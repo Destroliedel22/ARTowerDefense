@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HandCollision : MonoBehaviour
 {
-    [SerializeField] private float waitTime = 5f;
+    private float waitTime = 20f;
     [SerializeField] private Transform[] handObjects;
 
     [SerializeField] private LayerMask handLayer;

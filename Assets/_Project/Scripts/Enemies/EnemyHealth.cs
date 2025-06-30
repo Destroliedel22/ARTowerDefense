@@ -5,9 +5,10 @@ public class EnemyHealth : MonoBehaviour
 {
     // Damage feedback
     [SerializeField] private GameObject damageTextPrefab;
+    [SerializeField] private GameObject damageEffect;
 
     // Health
-    private float maxHealth = 5;
+    [SerializeField] private float maxHealth = 5;
     public float currentHealth;
 
     private void Start()
@@ -31,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
     {
         // Soundeffect
         AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyTakeDamage);
+        Instantiate(damageEffect, transform.position, Quaternion.identity);
 
         ShowDamage("-" + amount.ToString());
         currentHealth -= amount;
